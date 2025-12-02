@@ -1,34 +1,48 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import './styles/global.css'
+
+import Header from './layout/Header'
+import Footer from './layout/Footer'
+
+import Home from './pages/Home'
+import MedicalDisclaimer from './pages/MedicalDisclaimer'
+import AboutUs from './pages/AboutUs'
+import MeetTheTeam from './pages/MeetTheTeam'
+import WhoWeServe from './pages/WhoWeServe'
+import SupportHHP from './pages/SupportHHP'
+import Volunteer from './pages/Volunteer'
+import Intern from './pages/Intern'
+import BecomePartner from './pages/BecomePartner'
+import MatchingDonations from './pages/MatchingDonations'
+import Donate from './pages/Donate'
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+    <Router>
+      <div className="app">
+        <Header />
+        <main>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/medical-disclaimer" element={<MedicalDisclaimer />} />
+
+            <Route path="/who-we-are/about-us" element={<AboutUs />} />
+            <Route path="/who-we-are/meet-the-team" element={<MeetTheTeam />} />
+
+            <Route path="/why-hhp/who-we-serve" element={<WhoWeServe />} />
+
+            <Route path="/how-to-help/support-hhp" element={<SupportHHP />} />
+            <Route path="/how-to-help/volunteer" element={<Volunteer />} />
+            <Route path="/how-to-help/intern" element={<Intern />} />
+            <Route path="/how-to-help/become-hhp-partner" element={<BecomePartner />} />
+            <Route path="/how-to-help/matching-donations" element={<MatchingDonations />} />
+
+            <Route path="/donate" element={<Donate />} />
+          </Routes>
+        </main>
+        <Footer />
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    </Router>
   )
 }
 
