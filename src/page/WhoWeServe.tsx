@@ -34,8 +34,24 @@ const WhoWeServe = () => {
                     </h1>
                 </div>
             </section>
-            
-            {/*  */}
+
+            {/* Who We Serve Section */}
+            <section>
+                <div>
+                    {data.map((item, index) => (
+                        <div key={index} className={`flex flex-col md:flex-row items-center my-12 ${index % 2 === 0 ? 'md:flex-row-reverse bg-[#c8d448]' : 'bg-[#7cc2e6]'}`}>
+                            <div className="md:w-1/2">
+                                <img src={item.imageUrl} alt={item.title} className="w-full h-auto rounded shadow-md" />
+                            </div>
+                            <div className="md:w-1/2 px-12">
+                                <h2 className="text-3xl font-semibold text-gray-800 mb-4">{item.title}</h2>
+                                <p className="text-gray-600 leading-relaxed">{item.description}</p>
+                            </div>
+                        </div>
+                    ))}
+                </div>
+            </section>
+
              {/* Countries Section */}
             <section>
                 <div className="text-center py-8">
