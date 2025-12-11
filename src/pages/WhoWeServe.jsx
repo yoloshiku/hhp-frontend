@@ -57,9 +57,9 @@ const WhoWeServe = () => {
                 {/* Countries Section */}
                 <section>
                     <div className="text-center py-8">
-                        <h3 className="text-4xl md:text-5xl font-light text-gray-900 tracking-tight">
+                        <h2 className="text-4xl md:text-5xl font-light text-gray-900 tracking-tight">
                             Countries Served
-                        </h3>
+                        </h2>
                     </div>
                 </section>
 
@@ -67,9 +67,9 @@ const WhoWeServe = () => {
                 {/* Support HHP Section */}
                 <section>
                     <div className="text-center py-8">
-                        <h3 className="text-4xl md:text-5xl font-light text-gray-900 tracking-tight">
+                        <h2 className="text-4xl md:text-5xl font-light text-gray-900 tracking-tight">
                             Support HHP
-                        </h3>
+                        </h2>
                     </div>
                     <div>
                         <div className="flex flex-col lg:flex-row overflow-hidden">
