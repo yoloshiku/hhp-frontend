@@ -1,0 +1,113 @@
+/* HEADER BAR */
+.hhp-header {
+  background: white;
+  padding: 14px 0;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+  margin-left: auto;
+}
+
+.hhp-header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; 
+  max-width: 1200px;                /* keep content inside screen */
+  margin: 0 20px;        /* center row */
+  padding: 0 10px;
+  box-sizing: border-box;           /* padding INCLUDED in width */
+}
+
+
+
+/* LOGO */
+.hhp-logo-link {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.hhp-logo {
+  height: 60px;
+  width: auto;
+  cursor: pointer;
+}
+
+/* NAV WRAPPER */
+.hhp-nav {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  flex-wrap: nowrap;                /* keep in one row */
+  font-family: "Open Sans", sans-serif;
+  margin-left: auto; 
+}
+.hhp-nav a {
+  text-decoration: none !important;
+}
+/* TOP-LEVEL MENU ITEMS */
+.nav-item {
+  font-size: 15px;
+  font-weight: 300;                 /* thin like old site */
+  cursor: pointer;
+  color: #000;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.nav-item:hover {
+  color: #065399;
+}
+
+/* DROPDOWN CONTAINER */
+.dropdown {
+  position: relative;
+}
+
+/* DROPDOWN MENU */
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: white;
+  box-shadow: 0px 2px 6px rgba(0,0,0,0.15);
+  border-radius: 4px;
+  min-width: 220px;
+  padding: 10px 0;
+  z-index: 2000;
+}
+
+/* LINKS INSIDE DROPDOWN */
+.dropdown-menu a {
+  display: block;
+  padding: 10px 16px;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 300;
+  text-transform: uppercase;
+  color: black;
+  white-space: nowrap;
+}
+
+.dropdown-menu a:hover {
+  background: #f2f6ff;
+  color: #065399;
+}
+
+/* SHOW DROPDOWN ON HOVER */
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+/* DONATE BUTTON – stays inside, not off-screen */
+.donate-btn {
+  padding: 10px 18px !important;
+  font-size: 15px !important;
+  border-radius: 4px;
+  text-transform: uppercase;
+  white-space: nowrap;
+  /* no margin-left:auto now, we use space-between instead */
+}
