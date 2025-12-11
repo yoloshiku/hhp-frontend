@@ -1,4 +1,5 @@
 import React from 'react';
+import H from '../components/common/H.jsx';
 
 const WhoWeServe = () => {
 
@@ -31,9 +32,9 @@ const WhoWeServe = () => {
                 <section>
                     <div className="relative text-center py-8 ">
                         <img src="https://humanhealthproject.org/wp-content/uploads/2023/09/Who-We-Serve-Cover-2.webp" alt="Who We Serve Cover" />
-                        <h1 className="absolute top-1/2 right-1/2 translate-x-1/2 -translate-y-1/2 text-4xl md:text-5xl font-light text-gray-900 tracking-tight ">
+                        <H level={1} className="absolute top-1/2 right-1/2 translate-x-1/2 -translate-y-1/2">
                             WHO WE SERVE
-                        </h1>
+                        </H>
                     </div>
                 </section>
 
@@ -46,7 +47,7 @@ const WhoWeServe = () => {
                                     <img src={item.imageUrl} alt={item.title} className="w-full h-auto rounded shadow-md" />
                                 </div>
                                 <div className="md:w-1/2 px-12">
-                                    <h2 className="text-3xl font-semibold text-gray-800 mb-4">{item.title}</h2>
+                                    <H level={2}>{item.title}</H>
                                     <p className="text-gray-600 leading-relaxed">{item.description}</p>
                                 </div>
                             </div>
@@ -57,9 +58,9 @@ const WhoWeServe = () => {
                 {/* Countries Section */}
                 <section>
                     <div className="text-center py-8">
-                        <h2 className="text-4xl md:text-5xl font-light text-gray-900 tracking-tight">
+                        <H level={2} className="text-center">
                             Countries Served
-                        </h2>
+                        </H>
                     </div>
                 </section>
 
@@ -67,17 +68,17 @@ const WhoWeServe = () => {
                 {/* Support HHP Section */}
                 <section>
                     <div className="text-center py-8">
-                        <h2 className="text-4xl md:text-5xl font-light text-gray-900 tracking-tight">
+                        <H level={2} className="text-center">
                             Support HHP
-                        </h2>
+                        </H>
                     </div>
                     <div>
                         <div className="flex flex-col lg:flex-row overflow-hidden">
                         {/* Left - Donate Content */}
                         <div className="lg:w-1/2 bg-linear-to-b from-slate-100 to-blue-50 px-8 md:px-16 py-16 flex flex-col items-center justify-center text-center">
-                            <h2 className="text-2xl md:text-3xl font-bold text-gray-700 tracking-widest mb-6">
+                            <H level={3} className="font-bold tracking-widest text-center">
                             DONATE TODAY
-                            </h2>
+                            </H>
                             <p className="text-gray-600 leading-relaxed max-w-md mb-8">
                             We rely on your donations to pay for servers, bandwidth, maintenance,
                             and development of the Human Health Project platform including
