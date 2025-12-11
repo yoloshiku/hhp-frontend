@@ -69,7 +69,7 @@ const WhoWeServe = () => {
                         Support HHP
                     </h3>
                 </div>
-                <div className="mx-4 md:mx-8 lg:mx-16">
+                <div>
                     <div className="flex flex-col lg:flex-row overflow-hidden">
                     {/* Left - Donate Content */}
                     <div className="lg:w-1/2 bg-gradient-to-b from-slate-100 to-blue-50 px-8 md:px-16 py-16 flex flex-col items-center justify-center text-center">
