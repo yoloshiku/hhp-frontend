@@ -30,9 +30,10 @@ const WhoWeServe = () => {
         <div className="section">
             <div className="container">
                 <section>
-                    <div className="relative text-center py-8 ">
+                    <div className="relative text-center py-8">
                         <img src="https://humanhealthproject.org/wp-content/uploads/2023/09/Who-We-Serve-Cover-2.webp" alt="Who We Serve Cover" />
-                        <H level={1} className="absolute top-1/2 right-1/2 translate-x-1/2 -translate-y-1/2">
+                        <div className="absolute inset-0 bg-black/40"></div>
+                        <H level={1} className="absolute top-1/2 right-1/2 translate-x-1/2 -translate-y-1/2 text-white!">
                             WHO WE SERVE
                         </H>
                     </div>
