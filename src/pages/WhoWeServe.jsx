@@ -1,7 +1,42 @@
 import React from 'react';
 import H from '../components/common/H.jsx';
+import Carousel from '../components/common/Carousel.jsx';
+import ImageTextSection from '../components/common/ImageTextSection.jsx';
 
 const WhoWeServe = () => {
+
+    const countriesServed = [
+        { name: 'United States', image: 'https://flagcdn.com/w320/us.png' },
+        { name: 'Canada', image: 'https://flagcdn.com/w320/ca.png' },
+        { name: 'United Kingdom', image: 'https://flagcdn.com/w320/gb.png' },
+        { name: 'Australia', image: 'https://flagcdn.com/w320/au.png' },
+        { name: 'Germany', image: 'https://flagcdn.com/w320/de.png' },
+        { name: 'France', image: 'https://flagcdn.com/w320/fr.png' },
+        { name: 'Spain', image: 'https://flagcdn.com/w320/es.png' },
+        { name: 'Italy', image: 'https://flagcdn.com/w320/it.png' },
+        { name: 'Netherlands', image: 'https://flagcdn.com/w320/nl.png' },
+        { name: 'Sweden', image: 'https://flagcdn.com/w320/se.png' },
+        { name: 'Norway', image: 'https://flagcdn.com/w320/no.png' },
+        { name: 'Denmark', image: 'https://flagcdn.com/w320/dk.png' },
+        { name: 'Finland', image: 'https://flagcdn.com/w320/fi.png' },
+        { name: 'Belgium', image: 'https://flagcdn.com/w320/be.png' },
+        { name: 'Switzerland', image: 'https://flagcdn.com/w320/ch.png' },
+        { name: 'Austria', image: 'https://flagcdn.com/w320/at.png' },
+        { name: 'Poland', image: 'https://flagcdn.com/w320/pl.png' },
+        { name: 'Ireland', image: 'https://flagcdn.com/w320/ie.png' },
+        { name: 'New Zealand', image: 'https://flagcdn.com/w320/nz.png' },
+        { name: 'Japan', image: 'https://flagcdn.com/w320/jp.png' },
+        { name: 'South Korea', image: 'https://flagcdn.com/w320/kr.png' },
+        { name: 'Singapore', image: 'https://flagcdn.com/w320/sg.png' },
+        { name: 'India', image: 'https://flagcdn.com/w320/in.png' },
+        { name: 'Brazil', image: 'https://flagcdn.com/w320/br.png' },
+        { name: 'Mexico', image: 'https://flagcdn.com/w320/mx.png' },
+        { name: 'Argentina', image: 'https://flagcdn.com/w320/ar.png' },
+        { name: 'South Africa', image: 'https://flagcdn.com/w320/za.png' },
+        { name: 'Nigeria', image: 'https://flagcdn.com/w320/ng.png' },
+        { name: 'Kenya', image: 'https://flagcdn.com/w320/ke.png' },
+        { name: 'Egypt', image: 'https://flagcdn.com/w320/eg.png' },
+    ];
 
     const data = [
         {
@@ -43,15 +78,14 @@ const WhoWeServe = () => {
                 <section>
                     <div>
                         {data.map((item, index) => (
-                            <div key={index} className={`flex flex-col md:flex-row items-center my-12 ${index % 2 === 0 ? 'md:flex-row-reverse bg-[#c8d448]' : 'bg-[#7cc2e6]'}`}>
-                                <div className="md:w-1/2">
-                                    <img src={item.imageUrl} alt={item.title} className="w-full h-auto rounded shadow-md" />
-                                </div>
-                                <div className="md:w-1/2 px-12">
-                                    <H level={2}>{item.title}</H>
-                                    <p className="text-gray-600 leading-relaxed">{item.description}</p>
-                                </div>
-                            </div>
+                            <ImageTextSection
+                                key={index}
+                                title={item.title}
+                                description={item.description}
+                                imageUrl={item.imageUrl}
+                                imageAlt={item.title}
+                                index={index}
+                            />
                         ))}
                     </div>
                 </section>
@@ -62,6 +96,13 @@ const WhoWeServe = () => {
                         <H level={2} className="text-center">
                             Countries Served
                         </H>
+                    </div>
+                    <div className="py-8">
+                        <Carousel
+                            items={countriesServed}
+                            autoPlay={true}
+                            autoPlayInterval={3000}
+                        />
                     </div>
                 </section>
 
@@ -86,11 +127,11 @@ const WhoWeServe = () => {
                             salaries. We need a small paid staff of 5 to work with a volunteer team of
                             80 people. Your financial gift will help people across the globe.
                             </p>
-                            <button className="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-8 py-3 rounded transition-colors duration-200 shadow-md hover:shadow-lg">
+                            <button className="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-8 py-3 rounded transition-colors duration-200 shadow-md hover:shadow-lg"
+                            onClick={()=> window.location.href = '/give'}>
                             GIVE NOW
                             </button>
                         </div>
-                        {/*  */}
 
                         {/* Right - Heart Image */}
                         <div className="lg:w-1/2">
@@ -112,7 +153,8 @@ const WhoWeServe = () => {
                             More People. More Information. Better Health.
                             </p>
                         </div>
-                        <button className="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-10 py-3 rounded transition-colors duration-200 shadow-md hover:shadow-lg whitespace-nowrap">
+                        <button className="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-10 py-3 rounded transition-colors duration-200 shadow-md hover:shadow-lg whitespace-nowrap" 
+                            onClick={()=> window.location.href = '/register/free-membership'}>
                             JOIN US!
                         </button>
                         </div>
