@@ -19,7 +19,7 @@ export default function Login() {
   return (
     <section className="authPage">
       <div className="authContainer">
-        <h1 className="authTitle">Sign in/Sign up</h1>
+        <h1 className="authTitle">Login</h1>
 
         <p className="authSubtitle">
           If you are not a member, please{" "}
