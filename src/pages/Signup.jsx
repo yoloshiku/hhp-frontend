@@ -4,6 +4,8 @@ import "./Signup.css";
 import googleIcon from "../assets/social/google.svg";
 import facebookIcon from "../assets/social/facebook.svg";
 import appleIcon from "../assets/social/apple.svg";
+import microsoftIcon from "../assets/social/microsoft.svg";
+
 
 export default function Signup() {
   const onSubmit = (e) => {
@@ -130,6 +132,15 @@ export default function Signup() {
             title="Sign up with Facebook"
           >
             <img className="socialIconImg" src={facebookIcon} alt="Facebook" />
+          </button>
+          
+          <button
+            type="button"
+            className="socialIconBtn socialMicrosoft"
+            aria-label="Continue with Microsoft"
+            title="Continue with Microsoft"
+          >
+            <img className="socialIconImg" src={microsoftIcon} alt="Microsoft" />
           </button>
 
           <button

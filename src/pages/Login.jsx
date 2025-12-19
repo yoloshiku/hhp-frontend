@@ -4,6 +4,7 @@ import "./Login.css";
 import googleIcon from "../assets/social/google.svg";
 import facebookIcon from "../assets/social/facebook.svg";
 import appleIcon from "../assets/social/apple.svg";
+import microsoftIcon from "../assets/social/microsoft.svg";
 
 export default function Login() {
   const onSubmit = (e) => {
@@ -112,6 +113,15 @@ export default function Login() {
 
           <button
             type="button"
+            className="socialIconBtn socialMicrosoft"
+            aria-label="Continue with Microsoft"
+            title="Continue with Microsoft"
+          >
+            <img className="socialIconImg" src={microsoftIcon} alt="Microsoft" />
+          </button>
+
+          <button
+            type="button"
             className="socialIconBtn socialApple"
             onClick={() => onSocial("apple")}
             aria-label="Continue with Apple"
@@ -119,6 +129,8 @@ export default function Login() {
           >
             <img className="socialIconImg" src={appleIcon} alt="Apple" />
           </button>
+
+
         </div>
       </div>
     </section>

@@ -14,3 +14,12 @@
 .authNewsletter input {
   margin-top: 3px;
 }
+
+.socialMicrosoft:hover {
+  border-color: #0078d4; /* Microsoft blue */
+  background: #fff;
+}
+
+.socialMicrosoft:hover .socialIconImg {
+  filter: grayscale(0);
+}
