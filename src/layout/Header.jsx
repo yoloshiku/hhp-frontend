@@ -1,13 +1,37 @@
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
+import { useAuth } from "../context/AuthContext";
 import "./Header.css";
 
 export default function Header() {
+  const { currentUser, logout } = useAuth();
+  const navigate = useNavigate();
+
+  const handleLogout = async () => {
+    try {
+      await logout();
+      navigate("/");
+    } catch (error) {
+      console.error("Logout failed:", error);
+    }
+  };
+
+  // Get display name or email
+  const getUserDisplayName = () => {
+    if (currentUser?.displayName) {
+      return currentUser.displayName.split(" ")[0]; // First name only
+    }
+    if (currentUser?.email) {
+      return currentUser.email.split("@")[0]; // Email prefix
+    }
+    return "User";
+  };
+
   return (
     <header className="hhp-header">
       <div className="hhp-header-inner">
         {/* LOGO */}
         <Link to="/" className="hhp-logo-link">
-        <img src="/hhp-logo.png" alt="Human Health Project" className="hhp-logo" />
+          <img src="/hhp-logo.png" alt="Human Health Project" className="hhp-logo" />
         </Link>
 
         {/* RIGHT SIDE */}
@@ -59,9 +83,23 @@ export default function Header() {
             DONATE
           </NavLink>
 
-          <NavLink to="/login" className="btn btn-secondary join-btn">
-            JOIN US / LOG IN
-          </NavLink>
+          {currentUser ? (
+            <div className="user-menu dropdown">
+              <span className="btn btn-secondary user-btn">
+                {getUserDisplayName()} ▾
+              </span>
+              <div className="dropdown-menu user-dropdown">
+                <span className="user-email">{currentUser.email}</span>
+                <button onClick={handleLogout} className="logout-btn">
+                  LOG OUT
+                </button>
+              </div>
+            </div>
+          ) : (
+            <NavLink to="/login" className="btn btn-secondary join-btn">
+              JOIN US / LOG IN
+            </NavLink>
+          )}
         </div>
       </div>
     </header>

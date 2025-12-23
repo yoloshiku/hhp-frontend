@@ -29,6 +29,17 @@
   .authLink:hover {
     text-decoration: underline;
   }
+
+  .authError {
+    background: #fee2e2;
+    border: 1px solid #ef4444;
+    color: #dc2626;
+    padding: 12px 16px;
+    border-radius: 6px;
+    margin-bottom: 16px;
+    font-size: 14px;
+    text-align: center;
+  }
   
   .authForm {
     text-align: left;
