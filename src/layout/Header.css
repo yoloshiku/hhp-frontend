@@ -127,3 +127,59 @@
 .join-btn:hover {
   background: #e8f1fa;
 }
+
+/* USER MENU */
+.user-menu {
+  position: relative;
+}
+
+.user-btn {
+  background: #065399;
+  color: #ffffff;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.user-btn:hover {
+  background: #043c70;
+}
+
+.user-dropdown {
+  right: 0;
+  left: auto;
+  min-width: 200px;
+  padding: 12px 0;
+}
+
+.user-email {
+  display: block;
+  padding: 8px 16px 12px;
+  font-size: 13px;
+  color: #666;
+  border-bottom: 1px solid #eee;
+  margin-bottom: 8px;
+  word-break: break-all;
+}
+
+.logout-btn {
+  display: block;
+  width: calc(100% - 32px);
+  margin: 0 16px;
+  padding: 10px 16px;
+  font-size: 14px;
+  font-weight: 500;
+  text-transform: uppercase;
+  color: #dc2626;
+  background: #fee2e2;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  text-align: center;
+}
+
+.logout-btn:hover {
+  background: #fecaca;
+}

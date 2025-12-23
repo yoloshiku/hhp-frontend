@@ -1,6 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
 import "./styles/global.css"
 
+import { AuthProvider } from "./context/AuthContext"
 import Header from "./layout/Header"
 import Footer from "./layout/Footer"
 
@@ -22,48 +23,50 @@ import Signup from "./pages/Signup"
 function App() {
   return (
     <Router>
-      <div className="app">
-        <Header />
+      <AuthProvider>
+        <div className="app">
+          <Header />
 
-        <main>
-          <Routes>
-            {/* Home */}
-            <Route path="/" element={<Home />} />
+          <main>
+            <Routes>
+              {/* Home */}
+              <Route path="/" element={<Home />} />
 
-            {/* Legal */}
-            <Route path="/medical-disclaimer" element={<MedicalDisclaimer />} />
+              {/* Legal */}
+              <Route path="/medical-disclaimer" element={<MedicalDisclaimer />} />
 
-            {/* Who We Are */}
-            <Route path="/who-we-are/about-us" element={<AboutUs />} />
-            <Route path="/who-we-are/meet-the-team" element={<MeetTheTeam />} />
+              {/* Who We Are */}
+              <Route path="/who-we-are/about-us" element={<AboutUs />} />
+              <Route path="/who-we-are/meet-the-team" element={<MeetTheTeam />} />
 
-            {/* Why HHP */}
-            <Route path="/why-hhp/who-we-serve" element={<WhoWeServe />} />
+              {/* Why HHP */}
+              <Route path="/why-hhp/who-we-serve" element={<WhoWeServe />} />
 
-            {/* How to Help */}
-            <Route path="/how-to-help/support-hhp" element={<SupportHHP />} />
-            <Route path="/how-to-help/volunteer" element={<Volunteer />} />
-            <Route path="/how-to-help/intern" element={<Intern />} />
-            <Route
-              path="/how-to-help/become-hhp-partner"
-              element={<BecomePartner />}
-            />
-            <Route
-              path="/how-to-help/matching-donations"
-              element={<MatchingDonations />}
-            />
+              {/* How to Help */}
+              <Route path="/how-to-help/support-hhp" element={<SupportHHP />} />
+              <Route path="/how-to-help/volunteer" element={<Volunteer />} />
+              <Route path="/how-to-help/intern" element={<Intern />} />
+              <Route
+                path="/how-to-help/become-hhp-partner"
+                element={<BecomePartner />}
+              />
+              <Route
+                path="/how-to-help/matching-donations"
+                element={<MatchingDonations />}
+              />
 
-            {/* Auth */}
-            <Route path="/login" element={<Login />} />
-            <Route path="/signup" element={<Signup />} />
+              {/* Auth */}
+              <Route path="/login" element={<Login />} />
+              <Route path="/signup" element={<Signup />} />
 
-            {/* Donate */}
-            <Route path="/donate" element={<Donate />} />
-          </Routes>
-        </main>
+              {/* Donate */}
+              <Route path="/donate" element={<Donate />} />
+            </Routes>
+          </main>
 
-        <Footer />
-      </div>
+          <Footer />
+        </div>
+      </AuthProvider>
     </Router>
   )
 }
