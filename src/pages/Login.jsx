@@ -1,5 +1,5 @@
-import { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useState, useEffect } from "react";
+import { Link, useNavigate, useSearchParams } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
 import "./Login.css";
 
@@ -9,16 +9,68 @@ import appleIcon from "../assets/social/apple.svg";
 import microsoftIcon from "../assets/social/microsoft.svg";
 
 export default function Login() {
+  const [searchParams] = useSearchParams();
+  const [activeTab, setActiveTab] = useState("email"); // email, phone, emailLink
+
+  // Email/Password state
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
+
+  // Phone OTP state
+  const [phone, setPhone] = useState("");
+  const [otp, setOtp] = useState("");
+  const [otpSent, setOtpSent] = useState(false);
+
+  // Email Link state
+  const [emailLinkSent, setEmailLinkSent] = useState(false);
+  const [emailForLink, setEmailForLink] = useState("");
+
+  // Common state
   const [error, setError] = useState("");
+  const [success, setSuccess] = useState("");
   const [loading, setLoading] = useState(false);
 
-  const { login, signInWithGoogle, signInWithFacebook, signInWithApple, signInWithMicrosoft, resetPassword } = useAuth();
+  const {
+    login,
+    signInWithGoogle,
+    signInWithFacebook,
+    signInWithApple,
+    signInWithMicrosoft,
+    resetPassword,
+    sendPhoneOTP,
+    verifyPhoneOTP,
+    sendEmailLink,
+    completeEmailLinkSignIn,
+    isEmailSignInLink
+  } = useAuth();
   const navigate = useNavigate();
 
-  const onSubmit = async (e) => {
+  // Handle email link sign-in on page load
+  useEffect(() => {
+    const mode = searchParams.get('mode');
+    if (mode === 'emailLink' && isEmailSignInLink(window.location.href)) {
+      const savedEmail = window.localStorage.getItem('emailForSignIn');
+      if (savedEmail) {
+        setLoading(true);
+        completeEmailLinkSignIn(savedEmail, window.location.href)
+          .then(() => {
+            window.localStorage.removeItem('emailForSignIn');
+            navigate("/");
+          })
+          .catch((err) => {
+            setError(getErrorMessage(err.code));
+            setLoading(false);
+          });
+      } else {
+        setActiveTab("emailLink");
+        setError("Please enter your email to complete sign-in");
+      }
+    }
+  }, [searchParams]);
+
+  // Email/Password Login
+  const onEmailSubmit = async (e) => {
     e.preventDefault();
     setError("");
     setLoading(true);
@@ -32,6 +84,56 @@ export default function Login() {
     setLoading(false);
   };
 
+  // Phone OTP - Send Code
+  const onSendOTP = async (e) => {
+    e.preventDefault();
+    setError("");
+    setSuccess("");
+    setLoading(true);
+
+    try {
+      await sendPhoneOTP(phone, "recaptcha-container");
+      setOtpSent(true);
+      setSuccess("OTP sent! Check your phone.");
+    } catch (err) {
+      setError(getErrorMessage(err.code));
+    }
+    setLoading(false);
+  };
+
+  // Phone OTP - Verify Code
+  const onVerifyOTP = async (e) => {
+    e.preventDefault();
+    setError("");
+    setLoading(true);
+
+    try {
+      await verifyPhoneOTP(otp);
+      navigate("/");
+    } catch (err) {
+      setError(getErrorMessage(err.code));
+    }
+    setLoading(false);
+  };
+
+  // Email Link - Send Link
+  const onSendEmailLink = async (e) => {
+    e.preventDefault();
+    setError("");
+    setSuccess("");
+    setLoading(true);
+
+    try {
+      await sendEmailLink(emailForLink);
+      setEmailLinkSent(true);
+      setSuccess("Sign-in link sent! Check your email inbox.");
+    } catch (err) {
+      setError(getErrorMessage(err.code));
+    }
+    setLoading(false);
+  };
+
+  // Social Login Handler
   const handleSocialLogin = async (provider) => {
     setError("");
     setLoading(true);
@@ -71,7 +173,7 @@ export default function Login() {
 
     try {
       await resetPassword(email);
-      alert("Password reset email sent! Check your inbox.");
+      setSuccess("Password reset email sent! Check your inbox.");
     } catch (err) {
       setError(getErrorMessage(err.code));
     }
@@ -94,6 +196,12 @@ export default function Login() {
         return "Sign-in popup was closed";
       case "auth/account-exists-with-different-credential":
         return "Account exists with different sign-in method";
+      case "auth/invalid-phone-number":
+        return "Invalid phone number. Include country code (e.g., +1)";
+      case "auth/invalid-verification-code":
+        return "Invalid OTP code. Please try again";
+      case "auth/code-expired":
+        return "OTP expired. Please request a new code";
       default:
         return "An error occurred. Please try again";
     }
@@ -111,62 +219,173 @@ export default function Login() {
           </Link>
         </p>
 
-        {error && <div className="authError">{error}</div>}
-
-        <form className="authForm" onSubmit={onSubmit}>
-          <label className="authLabel" htmlFor="email">
+        {/* Login Method Tabs */}
+        <div className="authTabs">
+          <button
+            className={`authTab ${activeTab === 'email' ? 'active' : ''}`}
+            onClick={() => { setActiveTab('email'); setError(''); setSuccess(''); }}
+          >
             Email
-          </label>
-          <input
-            className="authInput"
-            id="email"
-            name="email"
-            type="email"
-            autoComplete="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            required
-          />
+          </button>
+          <button
+            className={`authTab ${activeTab === 'phone' ? 'active' : ''}`}
+            onClick={() => { setActiveTab('phone'); setError(''); setSuccess(''); }}
+          >
+            Phone OTP
+          </button>
+          <button
+            className={`authTab ${activeTab === 'emailLink' ? 'active' : ''}`}
+            onClick={() => { setActiveTab('emailLink'); setError(''); setSuccess(''); }}
+          >
+            Passwordless
+          </button>
+        </div>
 
-          <label className="authLabel" htmlFor="password">
-            Password
-          </label>
-          <div className="authPasswordRow">
+        {error && <div className="authError">{error}</div>}
+        {success && <div className="authSuccess">{success}</div>}
+
+        {/* Email/Password Form */}
+        {activeTab === 'email' && (
+          <form className="authForm" onSubmit={onEmailSubmit}>
+            <label className="authLabel" htmlFor="email">Email</label>
             <input
-              className="authInput authInputPassword"
-              id="password"
-              name="password"
-              type={showPassword ? "text" : "password"}
-              autoComplete="current-password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
+              className="authInput"
+              id="email"
+              name="email"
+              type="email"
+              autoComplete="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
               required
             />
-            <button
-              type="button"
-              className="authEyeBtn"
-              aria-label="Toggle password visibility"
-              onClick={() => setShowPassword(!showPassword)}
-            >
-              {showPassword ? "🙈" : "👁"}
+
+            <label className="authLabel" htmlFor="password">Password</label>
+            <div className="authPasswordRow">
+              <input
+                className="authInput authInputPassword"
+                id="password"
+                name="password"
+                type={showPassword ? "text" : "password"}
+                autoComplete="current-password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                required
+              />
+              <button
+                type="button"
+                className="authEyeBtn"
+                aria-label="Toggle password visibility"
+                onClick={() => setShowPassword(!showPassword)}
+              >
+                {showPassword ? "🙈" : "👁"}
+              </button>
+            </div>
+
+            <label className="authRemember">
+              <input type="checkbox" />
+              <span>Remember Me</span>
+            </label>
+
+            <button className="authPrimaryBtn" type="submit" disabled={loading}>
+              {loading ? "Logging in..." : "Log In"}
             </button>
-          </div>
 
-          <label className="authRemember">
-            <input type="checkbox" />
-            <span>Remember Me</span>
-          </label>
+            <div className="authFooterLinks">
+              <a className="authLink" href="#" onClick={handleForgotPassword}>
+                Forgot Password
+              </a>
+            </div>
+          </form>
+        )}
 
-          <button className="authPrimaryBtn" type="submit" disabled={loading}>
-            {loading ? "Logging in..." : "Log In"}
-          </button>
+        {/* Phone OTP Form */}
+        {activeTab === 'phone' && (
+          <form className="authForm" onSubmit={otpSent ? onVerifyOTP : onSendOTP}>
+            {!otpSent ? (
+              <>
+                <label className="authLabel" htmlFor="phone">Phone Number</label>
+                <input
+                  className="authInput"
+                  id="phone"
+                  name="phone"
+                  type="tel"
+                  placeholder="+1234567890"
+                  value={phone}
+                  onChange={(e) => setPhone(e.target.value)}
+                  required
+                />
+                <p className="authHint">Include country code (e.g., +1 for US)</p>
 
-          <div className="authFooterLinks">
-            <a className="authLink" href="#" onClick={handleForgotPassword}>
-              Forgot Password
-            </a>
-          </div>
-        </form>
+                <button className="authPrimaryBtn" type="submit" disabled={loading}>
+                  {loading ? "Sending..." : "Send OTP"}
+                </button>
+              </>
+            ) : (
+              <>
+                <label className="authLabel" htmlFor="otp">Enter OTP Code</label>
+                <input
+                  className="authInput authOtpInput"
+                  id="otp"
+                  name="otp"
+                  type="text"
+                  maxLength="6"
+                  placeholder="000000"
+                  value={otp}
+                  onChange={(e) => setOtp(e.target.value.replace(/\D/g, ''))}
+                  required
+                />
+
+                <button className="authPrimaryBtn" type="submit" disabled={loading}>
+                  {loading ? "Verifying..." : "Verify OTP"}
+                </button>
+
+                <div className="authFooterLinks">
+                  <a className="authLink" href="#" onClick={(e) => { e.preventDefault(); setOtpSent(false); setOtp(''); }}>
+                    Resend OTP
+                  </a>
+                </div>
+              </>
+            )}
+            <div id="recaptcha-container"></div>
+          </form>
+        )}
+
+        {/* Email Link (Passwordless) Form */}
+        {activeTab === 'emailLink' && (
+          <form className="authForm" onSubmit={onSendEmailLink}>
+            <label className="authLabel" htmlFor="emailLink">Email</label>
+            <input
+              className="authInput"
+              id="emailLink"
+              name="emailLink"
+              type="email"
+              value={emailForLink}
+              onChange={(e) => setEmailForLink(e.target.value)}
+              required
+              disabled={emailLinkSent}
+            />
+
+            {!emailLinkSent ? (
+              <>
+                <p className="authHint">We'll send you a magic link to sign in - no password needed!</p>
+                <button className="authPrimaryBtn" type="submit" disabled={loading}>
+                  {loading ? "Sending..." : "Send Magic Link"}
+                </button>
+              </>
+            ) : (
+              <>
+                <p className="authHint">Check your email and click the link to sign in.</p>
+                <button
+                  className="authSecondaryBtn"
+                  type="button"
+                  onClick={() => { setEmailLinkSent(false); setSuccess(''); }}
+                >
+                  Send Again
+                </button>
+              </>
+            )}
+          </form>
+        )}
 
         <div className="authDivider">
           <span className="authDividerLine" />

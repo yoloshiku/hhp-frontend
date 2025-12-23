@@ -40,7 +40,86 @@
     font-size: 14px;
     text-align: center;
   }
-  
+
+  .authSuccess {
+    background: #dcfce7;
+    border: 1px solid #22c55e;
+    color: #16a34a;
+    padding: 12px 16px;
+    border-radius: 6px;
+    margin-bottom: 16px;
+    font-size: 14px;
+    text-align: center;
+  }
+
+  /* Auth Tabs */
+  .authTabs {
+    display: flex;
+    gap: 0;
+    margin-bottom: 20px;
+    border: 1px solid #d9d9d9;
+    border-radius: 6px;
+    overflow: hidden;
+  }
+
+  .authTab {
+    flex: 1;
+    padding: 12px 16px;
+    font-size: 14px;
+    font-weight: 500;
+    background: #f5f5f5;
+    border: none;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+    color: #666;
+  }
+
+  .authTab:not(:last-child) {
+    border-right: 1px solid #d9d9d9;
+  }
+
+  .authTab:hover {
+    background: #e8e8e8;
+  }
+
+  .authTab.active {
+    background: #0b5ea8;
+    color: #fff;
+  }
+
+  /* Hint text */
+  .authHint {
+    font-size: 13px;
+    color: #666;
+    margin: 8px 0 16px;
+  }
+
+  /* OTP Input */
+  .authOtpInput {
+    text-align: center;
+    font-size: 24px;
+    letter-spacing: 8px;
+    font-weight: 600;
+  }
+
+  /* Secondary Button */
+  .authSecondaryBtn {
+    width: 260px;
+    height: 48px;
+    display: block;
+    margin: 16px auto 0;
+    background: #fff;
+    border: 2px solid #0b5ea8;
+    color: #0b5ea8;
+    font-weight: 700;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+
+  .authSecondaryBtn:hover {
+    background: #e8f1fa;
+  }
+
   .authForm {
     text-align: left;
     margin: 0 auto;

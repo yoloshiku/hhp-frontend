@@ -1,5 +1,11 @@
 import { initializeApp } from "firebase/app";
-import { getAuth, GoogleAuthProvider, FacebookAuthProvider, OAuthProvider } from "firebase/auth";
+import {
+  getAuth,
+  GoogleAuthProvider,
+  FacebookAuthProvider,
+  OAuthProvider,
+  RecaptchaVerifier
+} from "firebase/auth";
 
 const firebaseConfig = {
   apiKey: "AIzaSyARmZDM5ML9ejpgEE2ITSszxEF2Qp5BCSQ",
@@ -22,5 +28,18 @@ export const googleProvider = new GoogleAuthProvider();
 export const facebookProvider = new FacebookAuthProvider();
 export const appleProvider = new OAuthProvider('apple.com');
 export const microsoftProvider = new OAuthProvider('microsoft.com');
+
+// Setup reCAPTCHA for phone auth
+export const setupRecaptcha = (containerId) => {
+  if (!window.recaptchaVerifier) {
+    window.recaptchaVerifier = new RecaptchaVerifier(auth, containerId, {
+      size: 'invisible',
+      callback: () => {
+        // reCAPTCHA solved
+      }
+    });
+  }
+  return window.recaptchaVerifier;
+};
 
 export default app;
