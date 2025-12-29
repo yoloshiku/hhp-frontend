@@ -263,8 +263,8 @@ export default function MeetTheTeam() {
 
         {/* Footer Links */}
         <div className="team-links">
-          <a href="#program-council" className="team-links__link">Program Council &gt;&gt;</a>
-          <a href="#advisory-board" className="team-links__link">Advisory Board &gt;&gt;</a>
+          <a href="/meet-team-program-council/" className="team-links__link">Program Council &gt;&gt;</a>
+          <a href="/meet-team-advisory-board/" className="team-links__link">Advisory Board &gt;&gt;</a>
         </div>
       </div>
     </div>
