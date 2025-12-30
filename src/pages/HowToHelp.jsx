@@ -32,23 +32,23 @@ export default function HowToHelp() {
 
   const supportersTitle = "Our Supporters";
   const supporters = [
-    "Cole-Crone Family Foundation",
-    "ChildLife",
-    "Gerald Herman",
-    "Google",
-    "Microsoft",
-    "Salesforce",
-    "Notion",
-    "Amazon",
-    "WordPress",
-    "SAS",
-    "VolunteerMatch",
-    "Zoom",
-    "Atlassian",
-    "DocHub",
-    "Sendy",
-    "UptimeRobot",
-    "CoPort",
+    { name: "Cole-Crone Family Foundation", logo: "" },
+    { name: "ChildLife", logo: "https://humanhealthproject.org/wp-content/uploads/2023/09/supporter_childlife_logo-400x124.webp" },
+    { name: "Gerald Herman", logo: "" },
+    { name: "Google", logo: "https://humanhealthproject.org/wp-content/uploads/2023/09/supporter_2000px-Google_logo-400x135.webp" },
+    { name: "Microsoft", logo: "https://humanhealthproject.org/wp-content/uploads/2023/09/supporter_Microsoft_logo-400x85.webp" },
+    { name: "Salesforce", logo: "https://humanhealthproject.org/wp-content/uploads/2023/09/supporter_salesforce_logo.webp" },
+    { name: "Notion", logo: "https://humanhealthproject.org/wp-content/uploads/2023/09/supporter_notion_logo-400x400.webp" },
+    { name: "Amazon", logo: "https://humanhealthproject.org/wp-content/uploads/2023/09/supporter_Amazon_logo-400x121.webp" },
+    { name: "WordPress", logo: "https://humanhealthproject.org/wp-content/uploads/2023/09/supporter_WordPress_logo-400x91.webp" },
+    { name: "SAS", logo: "https://humanhealthproject.org/wp-content/uploads/2023/09/supporter_SAS_logo-400x164.webp" },
+    { name: "VolunteerMatch", logo: "https://humanhealthproject.org/wp-content/uploads/2023/09/supporter_SAS_logo-400x164.webp" },
+    { name: "Zoom", logo: "https://humanhealthproject.org/wp-content/uploads/2023/09/supporter_zoom_logo-400x90.webp" },
+    { name: "Atlassian", logo: "https://humanhealthproject.org/wp-content/uploads/2023/09/supporter_Atlasian_logo-400x127.webp" },
+    { name: "DocHub", logo: "https://humanhealthproject.org/wp-content/uploads/2023/09/supporter_DocHub_logo-400x95.webp" },
+    { name: "Sendy", logo: "https://humanhealthproject.org/wp-content/uploads/2023/08/supporter_sendy-logo.webp" },
+    { name: "UptimeRobot", logo: "https://humanhealthproject.org/wp-content/uploads/2023/09/uptimerobot-logo-300x92-1.webp" },
+    { name: "CoPort", logo: "https://humanhealthproject.org/wp-content/uploads/2024/08/CoPort_Logo-1-400x400.png" },
   ];
 
 
@@ -114,7 +114,15 @@ export default function HowToHelp() {
           <div style={styles.supportersGrid}>
             {supporters.map((supporter, index) => (
               <div key={index} style={styles.supporterItem}>
-                <span style={styles.supporterName}>{supporter}</span>
+                {supporter.logo ? (
+                  <img
+                    src={supporter.logo}
+                    alt={`${supporter.name} logo`}
+                    style={styles.supporterLogo}
+                  />
+                ) : (
+                  <span style={styles.supporterName}>{supporter.name}</span>
+                )}
               </div>
             ))}
           </div>
@@ -285,5 +293,10 @@ const styles = {
     fontSize: '14px',
     fontWeight: '500',
     color: '#555',
+  },
+  supporterLogo: {
+    maxWidth: '100px',
+    maxHeight: '50px',
+    objectFit: 'contain',
   },
 };
