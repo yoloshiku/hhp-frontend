@@ -37,22 +37,24 @@ export default function Programs() {
 
   return (
     <section style={styles.programsSection}>
-      <div style={styles.programsGrid}>
-        {programs.map((program, index) => (
-          <div key={index} style={styles.programCard}>
-            {program.image ? (
-              <img src={program.image} alt={program.title} style={styles.programImage} />
-            ) : (
-              <div style={styles.programImagePlaceholder}>
-                <span style={styles.programImageText}>📷</span>
+      <div style={styles.container}>
+        <div style={styles.programsGrid}>
+          {programs.map((program, index) => (
+            <div key={index} style={styles.programCard}>
+              {program.image ? (
+                <img src={program.image} alt={program.title} style={styles.programImage} />
+              ) : (
+                <div style={styles.programImagePlaceholder}>
+                  <span style={styles.programImageText}>📷</span>
+                </div>
+              )}
+              <div style={styles.programContent}>
+                <h3 style={styles.programTitle}>{program.title}</h3>
+                <p style={styles.programDescription}>{program.description}</p>
               </div>
-            )}
-            <div style={styles.programContent}>
-              <h3 style={styles.programTitle}>{program.title}</h3>
-              <p style={styles.programDescription}>{program.description}</p>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     </section>
   );
@@ -63,6 +65,11 @@ const styles = {
     marginTop: '60px',
     paddingTop: '40px',
     borderTop: '1px solid #eee',
+  },
+  container: {
+    maxWidth: '900px',
+    margin: '0 auto',
+    padding: '0 20px',
   },
   programsGrid: {
     display: 'grid',
