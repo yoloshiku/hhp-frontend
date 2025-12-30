@@ -1,6 +1,15 @@
-import React from 'react';
+import { useEffect } from 'react';
 
 export default function HowToHelp() {
+  useEffect(() => {
+    const hash = window.location.hash;
+    if (hash) {
+      const element = document.querySelector(hash);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }
+  }, []);
 
   const pageTitle = "HOW TO HELP";
   const introText = "We are extremely grateful to all our amazing team members, volunteers, advisers, board members and funders who allow us to continue Human Health Project's (HHP) mission while remaining independent, integrative and unbiased.";
@@ -88,7 +97,7 @@ export default function HowToHelp() {
       </section>
 
       {/* Volunteer Section */}
-      <section style={styles.volunteerSection}>
+      <section style={styles.volunteerSection} id="volunteer">
         <div style={styles.container}>
           <h2 style={styles.sectionTitle}>{volunteerTitle}</h2>
           <div style={styles.volunteerGrid}>

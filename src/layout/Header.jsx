@@ -65,8 +65,8 @@ export default function Header() {
                 HOW TO HELP ▾
               </span>
               <div className="dropdown-menu">
-                <NavLink to="/how-to-help/support-hhp">SUPPORT HHP</NavLink>
-                <NavLink to="/how-to-help/volunteer">VOLUNTEER</NavLink>
+                <NavLink to="/how-to-help/">SUPPORT HHP</NavLink>
+                <NavLink to="/how-to-help/#volunteer">VOLUNTEER</NavLink>
                 <NavLink to="/how-to-help/intern">INTERN</NavLink>
                 <NavLink to="/how-to-help/become-hhp-partner">
                   BECOME A HHP PARTNER
