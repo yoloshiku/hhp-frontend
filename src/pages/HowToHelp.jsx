@@ -16,17 +16,17 @@ export default function HowToHelp() {
     {
       name: "CommunityNI",
       location: "(Northern Ireland Based)",
-      logo: "🌐",
+      image: "https://humanhealthproject.org/wp-content/uploads/2025/10/CommunityNI-logo-e1761060872175.jpg",
     },
     {
       name: "Idealist / VolunteerMatch",
       location: "(US Based)",
-      logo: "🌍",
+      image: "https://humanhealthproject.org/wp-content/uploads/2023/09/idealist_logo.webp",
     },
     {
       name: "Be Collective",
       location: "(Northern Ireland based)",
-      logo: "✨",
+      image: "https://humanhealthproject.org/wp-content/uploads/2023/09/becollective_logo.webp",
     },
   ];
 
@@ -94,7 +94,11 @@ export default function HowToHelp() {
           <div style={styles.volunteerGrid}>
             {volunteerPlatforms.map((platform, index) => (
               <div key={index} style={styles.volunteerCard}>
-                <div style={styles.volunteerLogo}>{platform.logo}</div>
+                <img
+                  src={platform.image}
+                  alt={`${platform.name} logo`}
+                  style={styles.volunteerLogo}
+                />
                 <p style={styles.volunteerName}>{platform.name}</p>
                 <p style={styles.volunteerLocation}>{platform.location}</p>
               </div>
@@ -241,7 +245,9 @@ const styles = {
     padding: '20px',
   },
   volunteerLogo: {
-    fontSize: '60px',
+    width: '120px',
+    height: '60px',
+    objectFit: 'contain',
     marginBottom: '15px',
   },
   volunteerName: {
