@@ -8,38 +8,40 @@ export default function BecomePartner() {
   const contactEmail = "partners@humanhealthproject.org";
   const donateButtonText = "DONATE NOW";
 
-  return (
+return (
     <div style={styles.pageWrapper}>
-      <section style={styles.heroSection}>
-        <div style={styles.heroOverlay}>
-          <h1 style={styles.heroTitle}>{heroTitle}</h1>
-        </div>
-      </section>
-
-      <section style={styles.contentSection}>
-        <div style={styles.contentContainer}>
-          <div style={styles.textColumn}>
-            <p style={styles.paragraph}>{paragraph}</p>
-
-            <p style={styles.contactText}>
-              {contactText}<br />
-              <a href={`mailto:${contactEmail}`} style={styles.emailLink}>
-                {contactEmail}
-              </a>
-            </p>
-          </div>
-
-          <div style={styles.rightColumn}>
-            <div style={styles.imagePlaceholder}>
-              <span style={styles.imagePlaceholderText}>👩‍👩‍👧 Two Women Embracing</span>
+        <section style={styles.heroSection}>
+            <div style={styles.heroOverlay}>
+                <h1 style={styles.heroTitle}>{heroTitle}</h1>
             </div>
-            <button style={styles.donateButton}>{donateButtonText}</button>
-          </div>
-        </div>
-      </section>
-      <Programs />
+        </section>
+
+        <section style={styles.contentSection}>
+            <div style={styles.contentContainer}>
+                <div style={styles.textColumn}>
+                    <p style={styles.paragraph}>{paragraph}</p>
+
+                    <p style={styles.contactText}>
+                        {contactText}<br />
+                        <a href={`mailto:${contactEmail}`} style={styles.emailLink}>
+                            {contactEmail}
+                        </a>
+                    </p>
+                </div>
+
+                <div style={styles.rightColumn}>
+                    <img 
+                        src="https://humanhealthproject.org/wp-content/uploads/2024/07/Donation_Image-e1722820999357.jpg" 
+                        alt="Two Women Embracing" 
+                        style={styles.imagePlaceholder}
+                    />
+                    <button style={styles.donateButton}>{donateButtonText}</button>
+                </div>
+            </div>
+        </section>
+        <Programs />
     </div>
-  );
+);
 }
 
 const styles = {
@@ -54,7 +56,7 @@ const styles = {
     maxWidth: '900px',
     height: '220px',
     margin: '0 auto',
-    backgroundImage: 'linear-gradient(135deg, #d4e4ed 0%, #b8c9d9 50%, #a0b5c5 100%)',
+    backgroundImage: 'url(https://humanhealthproject.org/wp-content/uploads/2024/07/woman-leading-meeting-e1722823028301.png)',
     backgroundSize: 'cover',
     backgroundPosition: 'center',
     position: 'relative',
@@ -118,7 +120,7 @@ const styles = {
   },
   imagePlaceholder: {
     width: '200px',
-    height: '160px',
+    height: 'auto',
     backgroundColor: '#f0f4f0',
     borderRadius: '4px',
     display: 'flex',
