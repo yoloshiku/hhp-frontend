@@ -19,6 +19,7 @@ import MatchingDonations from "./pages/MatchingDonations"
 import Donate from "./pages/Donate"
 import Login from "./pages/Login"
 import Signup from "./pages/Signup"
+import HowToHelp from "./pages/HowToHelp"
 
 function App() {
   return (
@@ -43,8 +44,9 @@ function App() {
               <Route path="/why-hhp/who-we-serve" element={<WhoWeServe />} />
 
               {/* How to Help */}
-              <Route path="/how-to-help/support-hhp" element={<SupportHHP />} />
-              <Route path="/how-to-help/volunteer" element={<Volunteer />} />
+              <Route path="/how-to-help/" element={<HowToHelp />} /> 
+              {/* <Route path="/how-to-help/support-hhp" element={<SupportHHP />} /> */}
+              {/* <Route path="/how-to-help/volunteer" element={<Volunteer />} /> */}
               <Route path="/how-to-help/intern" element={<Intern />} />
               <Route
                 path="/how-to-help/become-hhp-partner"
