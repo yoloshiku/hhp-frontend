@@ -20,6 +20,16 @@ import Donate from "./pages/Donate"
 import Login from "./pages/Login"
 import Signup from "./pages/Signup"
 import HowToHelp from "./pages/HowToHelp"
+import HealthcareAccessIntro from "./pages/HealthcareAccessIntro";
+import PatientAdvocacyNI from "./pages/PatientAdvocacyNI";
+import PatientAdvocacyLA from "./pages/PatientAdvocacyLA";
+import LearningAcademyVideos from "./pages/LearningAcademyVideos";
+import LearningAcademyEnglish from "./pages/LearningAcademyEnglish";
+import LearningAcademySpanish from "./pages/LearningAcademySpanish";
+import LearningAcademyMandarin from "./pages/LearningAcademyMandarin";
+import OnlineEvents from "./pages/OnlineEvents";
+import StopType2Diabetes from "./pages/StopType2Diabetes";
+import SharedPatientInformation from "./pages/SharedPatientInformation";
 
 function App() {
   return (
@@ -42,6 +52,42 @@ function App() {
 
               {/* Why HHP */}
               <Route path="/why-hhp/who-we-serve" element={<WhoWeServe />} />
+              {/* What We Do */}
+              <Route
+                path="/what-we-do/healthcare-access/introduction"
+                element={<HealthcareAccessIntro />}
+              />
+
+              <Route
+                path="/what-we-do/patient-advocacy/northern-ireland"
+                element={<PatientAdvocacyNI />}
+              />
+
+              <Route
+                path="/what-we-do/patient-advocacy/los-angeles"
+                element={<PatientAdvocacyLA />}
+              />
+
+              <Route path="/what-we-do/learning-academy/videos" element={<LearningAcademyVideos />} />
+              <Route path="/what-we-do/learning-academy/english" element={<LearningAcademyEnglish />} />
+              <Route path="/what-we-do/learning-academy/spanish" element={<LearningAcademySpanish />} />
+              <Route path="/what-we-do/learning-academy/mandarin" element={<LearningAcademyMandarin />} />
+
+
+              <Route
+                path="/what-we-do/online-events"
+                element={<OnlineEvents />}
+              />
+
+              <Route
+                path="/what-we-do/stop-type-2-diabetes/introduction"
+                element={<StopType2Diabetes />}
+              />
+
+              <Route
+                path="/what-we-do/shared-patient-information"
+                element={<SharedPatientInformation />}
+              />
 
               {/* How to Help */}
               <Route path="/how-to-help/" element={<HowToHelp />} /> 
