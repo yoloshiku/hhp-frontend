@@ -50,6 +50,69 @@ export default function Header() {
                 <NavLink to="/who-we-are/meet-the-team">MEET THE TEAM</NavLink>
               </div>
             </div>
+            {/* WHAT WE DO */}
+            <div className="dropdown">
+              <span className="nav-item">WHAT WE DO ▾</span>
+
+              <div className="dropdown-menu">
+                {/* Healthcare Access */}
+                <div className="dropdown-submenu">
+                  <span className="submenu-title">
+                    HEALTHCARE ACCESS <span>›</span>
+                  </span>
+
+                  <div className="dropdown-submenu-menu">
+                    <NavLink to="/what-we-do/healthcare-access/introduction">INTRODUCTION</NavLink>
+
+                    {/* Patient Advocacy */}
+                    <div className="dropdown-submenu nested">
+                      <span className="submenu-title">
+                        PATIENT ADVOCACY <span>›</span>
+                      </span>
+                      <div className="dropdown-submenu-menu">
+                        <NavLink to="/what-we-do/patient-advocacy/northern-ireland">
+                          PATIENT ADVOCACY - NORTHERN IRELAND
+                        </NavLink>
+                        <NavLink to="/what-we-do/patient-advocacy/los-angeles">
+                          PATIENT ADVOCACY - LOS ANGELES
+                        </NavLink>
+                      </div>
+                    </div>
+
+                    {/* Learning Academy */}
+                    <div className="dropdown-submenu nested">
+                      <span className="submenu-title">
+                        LEARNING ACADEMY <span>›</span>
+                      </span>
+                      <div className="dropdown-submenu-menu">
+                        <NavLink to="/what-we-do/learning-academy/videos">LEARNING ACADEMY VIDEOS</NavLink>
+                        <NavLink to="/what-we-do/learning-academy/english">LEARNING ACADEMY - ENGLISH</NavLink>
+                        <NavLink to="/what-we-do/learning-academy/spanish">LEARNING ACADEMY - SPANISH</NavLink>
+                        <NavLink to="/what-we-do/learning-academy/mandarin">LEARNING ACADEMY - MANDARIN</NavLink>
+                      </div>
+                    </div>
+
+                    <NavLink to="/what-we-do/online-events">ONLINE EVENTS</NavLink>
+                  </div>
+                </div>
+
+                {/* Stop Type 2 Diabetes */}
+                <div className="dropdown-submenu">
+                  <span className="submenu-title">
+                    STOP TYPE 2 DIABETES <span>›</span>
+                  </span>
+                  <div className="dropdown-submenu-menu">
+                    <NavLink to="/what-we-do/stop-type-2-diabetes/introduction">INTRODUCTION</NavLink>
+                  </div>
+                </div>
+
+                {/* Shared Patient Information */}
+                <NavLink to="/what-we-do/shared-patient-information">
+                  SHARED PATIENT INFORMATION
+                </NavLink>
+              </div>
+            </div>
+
 
             <div className="dropdown">
               <span className="nav-item">

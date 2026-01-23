@@ -70,7 +70,7 @@
   top: 100%;
   left: 0;
   background: #ffffff;
-  min-width: 220px;
+  min-width: 200px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
   border-radius: 4px;
   padding: 8px 0;
@@ -182,4 +182,135 @@
 
 .logout-btn:hover {
   background: #fecaca;
+}
+
+/* items that have a submenu */
+.dropdown-sub {
+  position: relative;
+}
+
+/* make submenu label look like other dropdown links */
+.dropdown-sub-label {
+  display: block;
+  padding: 10px 16px;
+  font-size: 14px;
+  font-weight: 300;
+  text-transform: uppercase;
+  color: #000;
+  text-decoration: none;
+  cursor: default;
+  white-space: nowrap;
+}
+
+.dropdown-sub-label:hover {
+  background: #f2f6ff;
+  color: #065399;
+}
+
+/* nested submenu container */
+.dropdown-sub-menu {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 100%;
+  background: #ffffff;
+  min-width: 230px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  padding: 8px 0;
+  z-index: 3000;
+}
+
+/* show nested submenu on hover */
+.dropdown-sub:hover .dropdown-sub-menu {
+  display: block;
+}
+
+/* nested submenu links same style as dropdown-menu links */
+.dropdown-sub-menu a {
+  display: block;
+  padding: 10px 16px;
+  font-size: 14px;
+  font-weight: 300;
+  text-transform: uppercase;
+  color: #000;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.dropdown-sub-menu a:hover {
+  background: #f2f6ff;
+  color: #065399;
+}
+
+/* ===== Nested dropdown support (2nd/3rd level) ===== */
+
+.dropdown-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 16px;
+  font-size: 14px;
+  font-weight: 300;
+  text-transform: uppercase;
+  color: #000;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.dropdown-link:hover {
+  background: #f2f6ff;
+  color: #065399;
+}
+
+.dropdown-sub {
+  position: relative;
+}
+
+.dropdown-submenu {
+  position: relative;
+  display: block;              /* ✅ was none (this was hiding your menus) */
+}
+
+/* label row inside dropdown */
+.submenu-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 16px;
+  font-size: 14px;
+  font-weight: 300;
+  text-transform: uppercase;
+  cursor: pointer;
+  white-space: nowrap;
+  color: #000;
+}
+
+.submenu-title:hover {
+  background: #f2f6ff;
+  color: #065399;
+}
+
+/* flyout menu (2nd level) */
+.dropdown-submenu-menu {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 100%;
+  background: #ffffff;
+  min-width: 200px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  padding: 8px 0;
+  z-index: 3000;
+}
+
+.dropdown-submenu:hover > .dropdown-submenu-menu {
+  display: block;
+}
+
+/* third-level wrapper */
+.dropdown-submenu.nested {
+  position: relative;
+  display: block;
 }
