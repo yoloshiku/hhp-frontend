@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import "./HealthcareAccessIntro.css";
 
 const TOP_WATCH_URL = "https://youtu.be/NI7lsbtpb7Q?si=6EVMtP33qeX4vQ9P";
@@ -34,9 +35,6 @@ export default function HealthcareAccessIntroduction() {
     <main className="haci-page">
       <section className="haci-section">
         <div className="haci-container">
-          <p className="haci-eyebrow">Human Health Project Program</p>
-          <h1 className="haci-title">Healthcare Access for All</h1>
-
           <div className="haci-topVideoCard">
             <div className="haci-cardHeaderRow">
               <h2 className="haci-cardTitle">Watch the introduction</h2>
@@ -60,6 +58,7 @@ export default function HealthcareAccessIntroduction() {
           <div className="haci-mainGrid">
             {/* LEFT: FORM */}
             <section className="haci-card haci-cardPadded haci-formCard" aria-label="Notification signup form">
+              <h2 className="haci-h2">Healthcare Access for All</h2>
               <h2 className="haci-cardTitle">Sign up today</h2>
               <p className="haci-body">
                 Be notified about upcoming events in our Healthcare Access for All program.
@@ -67,9 +66,21 @@ export default function HealthcareAccessIntroduction() {
 
               <div className="haci-listBox">
                 <ul className="haci-bullets haci-bulletsVisible">
-                  <li>Patient Advocacy Workshops</li>
-                  <li>Online Video Courses</li>
-                  <li>Peer-to-Peer Events</li>
+                  <li>
+                    <a className="haci-anchorLink" href="#patient-advocacy-workshops">
+                      Patient Advocacy Workshops
+                    </a>
+                  </li>
+                  <li>
+                    <a className="haci-anchorLink" href="#online-video-courses">
+                      Online Video Courses
+                    </a>
+                  </li>
+                  <li>
+                    <a className="haci-anchorLink" href="#peer-to-peer-events">
+                      Peer-to-Peer Events
+                    </a>
+                  </li>
                 </ul>
               </div>
 
@@ -185,13 +196,28 @@ export default function HealthcareAccessIntroduction() {
 
           {/* TEXT SECTIONS (same content as WP page) */}
           <section className="haci-content">
-            <h2 className="haci-h2">Patient Advocacy Workshops</h2>
+            <p className="haci-eyebrow">Human Health Project Program</p>
+            <h2 id="patient-advocacy-workshops" className="haci-h2">Patient Advocacy Workshops</h2>
             <p className="haci-body">
-              These are online workshops, available separately with a Northern Ireland and Los Angeles,
-              California focus. They are free of charge. You can be located anywhere in the world to be able
+              These are online workshops, available separately with a{" "}
+              <Link
+                to="/what-we-do/patient-advocacy/northern-ireland"
+                className="haci-inlineLink"
+              >
+                Northern Ireland
+              </Link>{" "}
+              and{" "}
+              <Link
+                to="/what-we-do/patient-advocacy/los-angeles"
+                className="haci-inlineLink"
+              >
+                Los Angeles
+              </Link>
+              , California focus.  They are free of charge. You can be located anywhere in the world to be able
               to register and attend the workshops. They equip participants with practical skills to advocate
               for themselves and their loved ones.
             </p>
+          
 
             <div className="haci-listBox">
               <ul className="haci-bullets haci-bulletsVisible">
@@ -202,11 +228,16 @@ export default function HealthcareAccessIntroduction() {
                 <li>Where to Get Help</li>
               </ul>
             </div>
-
-            <h2 className="haci-h2">Online Video Courses</h2>
             <p className="haci-body">
-              Our comprehensive video courses cover essential topics for empowered healthcare navigation.
-              Explore the courses in English, Español and Mandarin.
+              Learn more about{" "}
+              <Link to="/what-we-do/stop-type-2-diabetes/introduction" className="haci-inlineLink">
+                Human Health Project’s (HHP) programs
+              </Link>
+            </p>
+
+            <h2 id="online-video-courses" className="haci-h2">Online Video Courses</h2>
+            <p className="haci-body">
+              Our comprehensive video courses cover essential topics for empowered healthcare navigation. These include:
             </p>
 
             <div className="haci-listBox">
@@ -224,11 +255,36 @@ export default function HealthcareAccessIntroduction() {
                 <li>Understanding the Role of a Patient Advocate</li>
               </ul>
             </div>
+            <p className="haci-body">
+              Explore the courses in{" "}
+              <Link
+                to="/what-we-do/learning-academy/english"
+                className="haci-inlineLink"
+              >
+                English
+              </Link>
+              ,{" "}
+              <Link
+                to="/what-we-do/learning-academy/spanish"
+                className="haci-inlineLink"
+              >
+                Español
+              </Link>{" "}
+              and{" "}
+              <Link
+                to="/what-we-do/learning-academy/mandarin"
+                className="haci-inlineLink"
+              >
+                Mandarin
+              </Link>
+              .
+            </p>
 
-            <h2 className="haci-h2">Online Peer to Peer Events</h2>
+
+            <h2 id="peer-to-peer-events" className="haci-h2">Online Peer to Peer Events</h2>
             <p className="haci-body">
               We have hosted impactful online panels, reaching over 1,000 attendees. These events foster community
-              and shared learning.
+              and shared learning. Our most recent panel, “How to Stand Up for Yourself: Patient Empowerment and the ePatient Movement with a focus on IBD,” exemplifies our commitment to addressing specific health challenges.
             </p>
           </section>
         </div>

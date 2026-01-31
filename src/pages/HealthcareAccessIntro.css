@@ -83,6 +83,7 @@
   font-size: 18px;
   letter-spacing: -0.01em;
   color: var(--haci-ink);
+  text-align: left;
 }
 
 /* Links + buttons */
@@ -92,6 +93,7 @@
   font-weight: 750;
   overflow-wrap: anywhere;
   word-break: break-word;
+  text-align: right;
 }
 
 .haci-link:hover {
@@ -140,7 +142,7 @@
   border: 0;
 }
 .haci-formCard {
-  margin-top: 32px;
+  margin-top: 20px;
 }
 
 /* Layout */
@@ -248,4 +250,29 @@
   .haci-twoColInputs {
     grid-template-columns: 1fr 1fr;
   }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* make the bullet items look like nice links (same brand style) */
+.haci-anchorLink {
+  color: var(--std2d-blue, #065399);
+  text-decoration: none;
+  font-weight: 750;
+}
+
+.haci-anchorLink:hover {
+  text-decoration: underline;
+}
+
+.haci-inlineLink {
+  color: #065399;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.haci-inlineLink:hover {
+  text-decoration: underline;
 }
