@@ -244,8 +244,8 @@ export default function Home() {
         }
 
         .video-thumbnail {
-          padding: 30px;
-          min-height: 400px;
+          padding: 0;
+          aspect-ratio: 16 / 9;
           display: flex;
           flex-direction: column;
           justify-content: center;
