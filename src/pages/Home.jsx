@@ -67,7 +67,7 @@ export default function Home() {
               <div className="video-thumbnail">
                 <iframe
                   className="video-background"
-                  src="https://www.youtube.com/embed/JxZLRnaZ4LI?autoplay=1&mute=1&loop=1&playlist=JxZLRnaZ4LI&controls=0&showinfo=0&rel=0&modestbranding=1&enablejsapi=1"
+                  src="https://www.youtube.com/embed/JxZLRnaZ4LI?autoplay=1&mute=1&loop=1&playlist=JxZLRnaZ4LI&controls=1&showinfo=0&rel=0&modestbranding=1&enablejsapi=1"
                   title="Stop Type 2 Diabetes Before It Starts"
                   allow="autoplay; encrypted-media"
                   allowFullScreen
@@ -79,7 +79,7 @@ export default function Home() {
                   <span>DIABETES</span>
                   <span className="video-subtitle">BEFORE IT STARTS</span>
                 </div> */}
-                <a
+                {/* <a
                   href="https://www.youtube.com/watch?v=JxZLRnaZ4LI"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -89,7 +89,7 @@ export default function Home() {
                     <path d="M19.615 2.184c-.228-.853-.896-1.526-1.743-1.756C16.29 0 10 0 10 0S3.71 0 2.128.428c-.847.23-1.515.903-1.743 1.756C0 3.768 0 7 0 7s0 3.232.385 4.816c.228.853.896 1.526 1.743 1.756C3.71 14 10 14 10 14s6.29 0 7.872-.428c.847-.23 1.515-.903 1.743-1.756C20 10.232 20 7 20 7s0-3.232-.385-4.816zM8 10V4l5.196 3L8 10z" fill="#FF0000"/>
                   </svg>
                   Watch on YouTube
-                </a>
+                </a> */}
               </div>
             </div>
             <div className="support-card">
@@ -259,7 +259,6 @@ export default function Home() {
           left: 0;
           width: 100%;
           height: 100%;
-          pointer-events: none;
           z-index: 0;
           border: 0;
         }
