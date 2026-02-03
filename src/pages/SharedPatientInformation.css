@@ -10,9 +10,9 @@
 /* PAGE */
 .spi-page {
   background:
-    radial-gradient(900px 500px at 20% 15%, rgba(6, 83, 153, 0.08), transparent 60%),
-    radial-gradient(800px 400px at 80% 35%, rgba(6, 83, 153, 0.06), transparent 60%),
-    linear-gradient(180deg, #f6faff 0%, #ffffff 55%, #f7faff 100%);
+    radial-gradient(1000px 420px at 15% 15%, rgba(6, 83, 153, 0.22), transparent 60%),
+    linear-gradient(180deg, rgba(6, 83, 153, 0.10), transparent 70%),
+    #ffffff;
   overflow-x: hidden;
 }
 
@@ -45,7 +45,7 @@
 
 /* TEXT */
 .spi-body {
-  font-size: 16px;
+  font-size: 17px;
   line-height: 1.75;
   color: rgba(0, 0, 0, 0.78);
   margin-bottom: 14px;
