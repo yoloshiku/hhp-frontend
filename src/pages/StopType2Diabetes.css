@@ -30,7 +30,7 @@
 .std2d-qrText,
 .std2d-miniText,
 .std2d-goalText {
-  font-size: 16px;
+  font-size: 17px;
   line-height: 1.75;
   color: rgba(0, 0, 0, 0.78);
 }
@@ -40,7 +40,6 @@
   padding: 60px 0 34px;
   background:
     radial-gradient(1000px 420px at 15% 15%, rgba(6, 83, 153, 0.22), transparent 60%),
-    radial-gradient(900px 360px at 90% 30%, rgba(6, 83, 153, 0.16), transparent 60%),
     linear-gradient(180deg, rgba(6, 83, 153, 0.10), transparent 70%),
     #ffffff;
 }
@@ -123,9 +122,6 @@
 
 .std2d-sectionAlt {
   padding: 42px 0 76px;
-  background:
-    linear-gradient(180deg, rgba(6, 83, 153, 0.06), transparent 55%),
-    #ffffff;
 }
 
 /* CARDS */
@@ -285,7 +281,7 @@
 }
 
 .std2d-qrImg {
-  width: min(360px, 59%);
+  width: min(360px, 61%);
   height: auto;
   object-fit: contain;
   border-radius: 16px;
