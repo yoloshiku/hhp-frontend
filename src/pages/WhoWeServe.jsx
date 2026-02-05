@@ -128,7 +128,7 @@ const WhoWeServe = () => {
                             80 people. Your financial gift will help people across the globe.
                             </p>
                             <button className="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-8 py-3 rounded transition-colors duration-200 shadow-md hover:shadow-lg"
-                            onClick={()=> window.location.href = '/give'}>
+                            onClick={()=> window.location.href = '/donate'}>
                             GIVE NOW
                             </button>
                         </div>
@@ -154,7 +154,7 @@ const WhoWeServe = () => {
                             </p>
                         </div>
                         <button className="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-10 py-3 rounded transition-colors duration-200 shadow-md hover:shadow-lg whitespace-nowrap" 
-                            onClick={()=> window.location.href = '/register/free-membership'}>
+                            onClick={()=> window.location.href = '/signup'}>
                             JOIN US!
                         </button>
                         </div>
