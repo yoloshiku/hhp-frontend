@@ -97,7 +97,7 @@ export default function HowToHelp() {
       </section>
 
       {/* Volunteer Section */}
-      <section style={styles.volunteerSection} id="volunteer">
+      <section style={styles.volunteerSection} id="volunteer-section">
         <div style={styles.container}>
           <h2 style={styles.sectionTitle}>{volunteerTitle}</h2>
           <div style={styles.volunteerGrid}>
