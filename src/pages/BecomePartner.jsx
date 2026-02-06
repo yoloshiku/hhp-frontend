@@ -1,5 +1,7 @@
 import React from 'react';
 import Programs from '../components/Programs';
+import "./BecomePartner.css";
+
 
 export default function BecomePartner() {
   const heroTitle = "Join Us! Become an HHP Partner";
@@ -17,7 +19,7 @@ return (
         </section>
 
         <section style={styles.contentSection}>
-            <div style={styles.contentContainer}>
+            <div className="bp-contentContainer" style={styles.contentContainer}>
                 <div style={styles.textColumn}>
                     <p style={styles.paragraph}>{paragraph}</p>
 
@@ -29,7 +31,7 @@ return (
                     </p>
                 </div>
 
-                <div style={styles.rightColumn}>
+                <div className="bp-rightColumn" style={styles.rightColumn}>
                     <img 
                         src="https://humanhealthproject.org/wp-content/uploads/2024/07/Donation_Image-e1722820999357.jpg" 
                         alt="Two Women Embracing" 
@@ -47,13 +49,13 @@ return (
 const styles = {
   pageWrapper: {
     fontFamily: "'Segoe UI', 'Helvetica Neue', Arial, sans-serif",
-    color: '#333',
+    color: '#000000',
     backgroundColor: '#fff',
     lineHeight: 1.7,
   },
   heroSection: {
     width: '100%',
-    maxWidth: '900px',
+    maxWidth: '1000px',
     height: '220px',
     margin: '0 auto',
     backgroundImage: 'url(https://humanhealthproject.org/wp-content/uploads/2024/07/woman-leading-meeting-e1722823028301.png)',
@@ -83,7 +85,7 @@ const styles = {
     padding: '50px 20px 80px',
   },
   contentContainer: {
-    maxWidth: '900px',
+    maxWidth: '1000px',
     margin: '0 auto',
     display: 'grid',
     gridTemplateColumns: '1fr 220px',
@@ -94,15 +96,15 @@ const styles = {
     paddingRight: '20px',
   },
   paragraph: {
-    fontSize: '14px',
-    color: '#444',
+    fontSize: '16px',
+    color: '#000000',
     marginBottom: '20px',
     lineHeight: 1.75,
     textAlign: 'left',
   },
   contactText: {
     fontSize: '14px',
-    color: '#333',
+    color: '#000000',
     fontWeight: '500',
     marginTop: '30px',
     lineHeight: 1.6,
