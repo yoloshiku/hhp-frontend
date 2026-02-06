@@ -1,13 +1,14 @@
 import React from 'react';
+import "./CharityInfo.css";
 
 export default function CharityInfo() {
   const charityInfoTitle = "Human Health Project Registered Charity Information";
   const charityInfoDescription = "Human Health Project is a Northern Ireland (UK) registered charity, a tax exempt 501(c)(3) Public Charity in the US and a Company Limited by Guarantee in the Republic of Ireland.";
 
   return (
-    <section style={styles.charitySection}>
-      <div style={styles.mainContainer}>
-        <div style={styles.charityInfoRow}>
+    <section style={styles.charitySection} className="charitySection">
+      <div style={styles.mainContainer} className="charityContainer">
+        <div style={styles.charityInfoRow} className="charityInfoRow">
           <div style={styles.charityTextColumn}>
             <h3 style={styles.charityInfoTitle}>{charityInfoTitle}</h3>
             <p style={styles.charityInfoDescription}>{charityInfoDescription}</p>

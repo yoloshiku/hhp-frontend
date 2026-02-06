@@ -1,4 +1,5 @@
 import React from 'react';
+import "./FooterInfo.css";
 
 export default function FooterInfo() {
   const niCharityNo = "NI Charity No. 101323";
@@ -16,10 +17,10 @@ export default function FooterInfo() {
   const contactEmail = "donations@humanhealthproject.org";
 
   return (
-    <section>
-      <div style={styles.mainContainer}>
-        <div style={styles.footerGrid}>
-          <div style={styles.footerColumn}>
+    <section className="footerInfoSection">
+      <div style={styles.mainContainer} className="footerInfoContainer" >
+        <div style={styles.footerGrid} className="footerInfoGrid">
+          <div style={styles.footerColumn} className="footerInfoCol">
             <p style={styles.registrationNumber}>
               <span style={styles.registrationText}>{niCharityNo}</span>
               <span style={styles.blueUnderline}></span>
@@ -29,14 +30,14 @@ export default function FooterInfo() {
             <p style={styles.registrationNumberSmall}>{roiCompanyNo}</p>
           </div>
 
-          <div style={styles.footerColumn}>
+          <div style={styles.footerColumn} className="footerInfoCol">
             <h4 style={styles.footerTitle}>{mailingAddressTitle}</h4>
             {mailingAddressLines.map((line, index) => (
               <p key={index} style={styles.addressLine}>{line}</p>
             ))}
           </div>
 
-          <div style={styles.footerColumnCenter}>
+          <div style={styles.footerColumnCenter} className="footerInfoCol footerInfoColCenter">
             <img
               src="https://widgets.guidestar.org/TransparencySeal/8067834"
               alt="Platinum Transparency 2024 - Candid"
@@ -44,7 +45,7 @@ export default function FooterInfo() {
             />
           </div>
 
-          <div style={styles.footerColumn}>
+          <div style={styles.footerColumn} className="footerInfoCol">
             <h4 style={styles.footerTitle}>{contactTitle}</h4>
             <a href={`mailto:${contactEmail}`} style={styles.emailLink}>
               {contactEmail}

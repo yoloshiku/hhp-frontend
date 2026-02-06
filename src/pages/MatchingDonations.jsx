@@ -1,6 +1,7 @@
 import React from 'react';
 import CharityInfo from '../components/layout/CharityInfo';
 import FooterInfo from '../components/layout/FooterInfo';
+import "./MatchingDonations.css"; // ✅ add this
 
 export default function MatchingDonations() {
   const heroTitle = "DONATIONS PAGE";
@@ -20,19 +21,21 @@ export default function MatchingDonations() {
 
   return (
     <div style={styles.pageWrapper}>
-      <section style={styles.heroSection}>
-        <div style={styles.heroContent}>
+      <section style={styles.heroSection} className="matching-heroSection">
+        <div style={styles.heroContent} className="matching-heroContent">
           <h1 style={styles.heroTitle}>{heroTitle}</h1>
         </div>
-        <div style={styles.heroImagePlaceholder}></div>
+
+        <div style={styles.heroImagePlaceholder} className="matching-heroImage" />
       </section>
+
       <section>
-        <div style={styles.mainContainer}>
-          <h2 style={styles.mainHeading}>{mainHeading}</h2>
+        <div style={styles.mainContainer} className="matching-mainContainer">
+          <h2 style={styles.mainHeading} className="matching-mainHeading">{mainHeading}</h2>
 
-          <p style={styles.description}>{descriptionText}</p>
+          <p style={styles.description} className="matching-description">{descriptionText}</p>
 
-          <div style={styles.platformsGrid}>
+          <div style={styles.platformsGrid} className="matching-platformsGrid">
             {matchingPlatforms.map((platform, index) => (
               <div key={index} style={styles.platformItem}>
                 <span style={styles.bullet}>•</span>
@@ -42,6 +45,7 @@ export default function MatchingDonations() {
           </div>
         </div>
       </section>
+
       <CharityInfo />
       <FooterInfo />
     </div>
@@ -59,7 +63,7 @@ const styles = {
   heroSection: {
     width: '100%',
     maxWidth: '900px',
-    height: '200px',
+    height: '100px',
     margin: '0 auto',
     backgroundColor: '#3a9bd9',
     backgroundImage: 'linear-gradient(135deg, #3a9bd9 0%, #2d8bc9 100%)',
@@ -81,9 +85,8 @@ const styles = {
     letterSpacing: '2px',
   },
   heroImagePlaceholder: {
-    width: '300px',
+    width: '100px',
     height: '100%',
-    backgroundImage: 'url(https://sqa.humanhealthproject.org/wp-content/uploads/2024/08/Screenshot-2024-08-22-171741.png)',
     backgroundSize: 'cover',
     backgroundPosition: 'center',
     backgroundRepeat: 'no-repeat',
@@ -104,7 +107,7 @@ const styles = {
   },
 
   description: {
-    fontSize: '14px',
+    fontSize: '16px',
     color: '#444',
     lineHeight: 1.75,
     marginBottom: '30px',
