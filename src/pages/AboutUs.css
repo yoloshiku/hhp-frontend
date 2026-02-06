@@ -196,6 +196,7 @@
 }
 
 .about-value-row__button {
+  display: inline-block;
   background-color: #2980b9;
   color: #ffffff;
   border: none;

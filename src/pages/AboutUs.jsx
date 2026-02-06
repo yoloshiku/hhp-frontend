@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import './AboutUs.css';
 
 // Content Data
@@ -172,7 +173,14 @@ export default function AboutUs() {
                   {value.text}
                 </p>
                 {value.hasButton && (
-                  <button className="about-value-row__button">{value.buttonText}</button>
+                  <a
+                    href="https://www.un.org/en/about-us/universal-declaration-of-human-rights"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="about-value-row__button"
+                  >
+                    {value.buttonText}
+                  </a>
                 )}
               </div>
               <div
@@ -194,7 +202,12 @@ export default function AboutUs() {
               <p className="about-support__donate-text">
                 {aboutUsContent.support.donateText}
               </p>
-              <button className="about-support__donate-button">{aboutUsContent.support.buttonText}</button>
+              <Link
+                to="/donate"
+                className="about-support__donate-button"
+              >
+                {aboutUsContent.support.buttonText}
+              </Link>
             </div>
             <div className="about-support__heart">
               <HeartHandsIcon />
@@ -212,7 +225,12 @@ export default function AboutUs() {
               </span>
             ))}
           </p>
-          <button className="about-footer-cta__button">{aboutUsContent.footerCta.buttonText}</button>
+          <Link
+            to="/signup"
+            className="about-footer-cta__button"
+          >
+            {aboutUsContent.footerCta.buttonText}
+          </Link>
         </section>
       </div>
     </div>

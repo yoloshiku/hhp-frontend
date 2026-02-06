@@ -3,9 +3,9 @@ export default function Home() {
     {
       id: 1,
       className: 'advocacy',
-      title: 'Patient Advocacy + Online Workshops',
+      title: 'Patient Advocacy - Online Workshops',
       description: 'Join our online workshops to learn how to advocate for yourself and help others with their healthcare journeys. Get the skills and knowledge to navigate the healthcare system.',
-      link: '/patient-advocacy',
+      link: '/what-we-do/patient-advocacy/los-angeles',
       imageUrl: 'https://humanhealthproject.org/wp-content/uploads/2023/09/patient-advocacy-1.webp'
     },
     {
@@ -13,7 +13,7 @@ export default function Home() {
       className: 'shared',
       title: 'Shared Patient Information',
       description: 'Our Shared Patient Information (SPI) Program allows patients to share their health data securely. We help you understand how to use and benefit from sharing information.',
-      link: '/shared-patient-info',
+      link: '/what-we-do/shared-patient-information',
       imageUrl: 'https://humanhealthproject.org/wp-content/uploads/2023/09/homepage_laptop_with_hand-1024x683.webp'
     },
     {
@@ -21,7 +21,7 @@ export default function Home() {
       className: 'caregiver',
       title: 'Learning Academy',
       description: 'The Learning Academy is designed for anyone interested in becoming an empowered patient, empowered caregiver or those seeking to understand patient engagement and patient-centered care.',
-      link: '/caregiver-academy',
+      link: '/what-we-do/learning-academy/english',
       imageUrl: 'https://humanhealthproject.org/wp-content/uploads/2023/09/patient-education_2-1-1024x683.webp'
     }
   ];
@@ -38,21 +38,21 @@ export default function Home() {
       id: 2,
       className: 'support',
       title: 'Support HHP',
-      link: '/support',
+      link: '/how-to-help/',
       imageUrl: 'https://humanhealthproject.org/wp-content/uploads/2023/09/homepage_all_hands_in.webp'
     },
     {
       id: 3,
       className: 'partner',
       title: 'Partner with Us',
-      link: '/partner',
+      link: '/how-to-help/become-hhp-partner',
       imageUrl: 'https://humanhealthproject.org/wp-content/uploads/2023/09/partner-1-1-1024x683.webp'
     },
     {
       id: 4,
       className: 'volunteer',
       title: 'Volunteer',
-      link: '/volunteer',
+      link: '/how-to-help#volunteer-section',
       imageUrl: 'https://humanhealthproject.org/wp-content/uploads/2023/09/homepage_coffee_shop-1024x683.webp'
     }
   ];
@@ -99,12 +99,11 @@ export default function Home() {
                   <div className="progress-fill" style={{ width: '15%' }}></div>
                 </div>
                 <p className="progress-text">
-                  <strong>$4,715</strong> raised of $50,000 goal · 31 donations
+                  <strong>$663</strong> raised of $8,000 goal · 16 donations
                 </p>
               </div>
               <div className="support-buttons">
-                <a href="/donate" className="btn btn-primary">Donate Now</a>
-                <a href="#" className="btn btn-green">
+                <a href="https://gofund.me/c24593610" className="btn btn-green">
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
                     <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
                   </svg>
@@ -192,7 +191,7 @@ export default function Home() {
           <p className="cta-text">Empower others to change their lives and change your own in the process</p>
           <div className="cta-box">
             <p>Our programs empower people with tools to be part of a clear path to a healthier, better lifestyle, better health.</p>
-            <a href="/join" className="btn btn-join">Join Us</a>
+            <a href="/signup" className="btn btn-join">Join Us</a>
           </div>
         </div>
       </section>
