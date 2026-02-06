@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
-
+import { useNavigate } from "react-router-dom";
+import "./HowToHelp.css";
 export default function HowToHelp() {
   useEffect(() => {
     const hash = window.location.hash;
@@ -19,23 +20,26 @@ export default function HowToHelp() {
   const aboutParagraph3 = "By joining our community, volunteering your skills, contributing expertise, funding our work, or partnering with us, you help advance a more human, connected, and equitable healthcare experience. Together, we are building a Unified Patient Experience (UPE) that brings health education, peer support, advocacy, and real-world evidence into one integrated ecosystem—empowering people everywhere to make informed decisions and feel less alone on their health journeys.";
 
   const donateButtonText = "MAKE A FINANCIAL GIFT";
-
+  const navigate = useNavigate();
   const volunteerTitle = "Volunteer";
   const volunteerPlatforms = [
     {
       name: "CommunityNI",
       location: "(Northern Ireland Based)",
       image: "https://humanhealthproject.org/wp-content/uploads/2025/10/CommunityNI-logo-e1761060872175.jpg",
+      link: "https://www.communityni.org/organisation/human-health-project",
     },
     {
       name: "Idealist / VolunteerMatch",
       location: "(US Based)",
       image: "https://humanhealthproject.org/wp-content/uploads/2023/09/idealist_logo.webp",
+      link: "https://www.idealist.org/en/nonprofit/c1c1d9c63442410383c781f1c92afc7c-human-health-project-los-angeles#opportunities",
     },
     {
       name: "Be Collective",
       location: "(Northern Ireland based)",
       image: "https://humanhealthproject.org/wp-content/uploads/2023/09/becollective_logo.webp",
+      link: "https://uk.becollective.com/groups/5df81f74a9cfcf00230aa88a/opportunities",
     },
   ];
 
@@ -59,7 +63,7 @@ export default function HowToHelp() {
     { name: "UptimeRobot", logo: "https://humanhealthproject.org/wp-content/uploads/2023/09/uptimerobot-logo-300x92-1.webp" },
     { name: "CoPort", logo: "https://humanhealthproject.org/wp-content/uploads/2024/08/CoPort_Logo-1-400x400.png" },
   ];
-
+  
 
   return (
     <div style={styles.pageWrapper}>
@@ -72,7 +76,7 @@ export default function HowToHelp() {
 
       <section style={styles.aboutSection}>
         <div style={styles.containerWide}>
-          <div style={styles.aboutGrid}>
+          <div className="howtohelp-aboutGrid" style={styles.aboutGrid}>
             <div style={styles.aboutContent}>
               <p style={styles.aboutParagraph}>{aboutParagraph1}</p>
               <p style={styles.aboutParagraph}>{aboutParagraph2}</p>
@@ -92,7 +96,12 @@ export default function HowToHelp() {
       {/* Donate CTA Section */}
       <section style={styles.ctaSection}>
         <div style={styles.container}>
-          <button style={styles.donateButton}>{donateButtonText}</button>
+          <button
+            style={styles.donateButton}
+            onClick={() => navigate("/donate")}
+          >
+            {donateButtonText}
+          </button>
         </div>
       </section>
 
@@ -100,17 +109,23 @@ export default function HowToHelp() {
       <section style={styles.volunteerSection} id="volunteer-section">
         <div style={styles.container}>
           <h2 style={styles.sectionTitle}>{volunteerTitle}</h2>
-          <div style={styles.volunteerGrid}>
+          <div className="howtohelp-volunteerGrid" style={styles.volunteerGrid}>
             {volunteerPlatforms.map((platform, index) => (
-              <div key={index} style={styles.volunteerCard}>
+              <a
+                key={index}
+                href={platform.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                style={styles.volunteerCard}
+              >
                 <img
                   src={platform.image}
-                  alt={`${platform.name} logo`}
+                  alt={platform.name}
                   style={styles.volunteerLogo}
                 />
                 <p style={styles.volunteerName}>{platform.name}</p>
                 <p style={styles.volunteerLocation}>{platform.location}</p>
-              </div>
+              </a>
             ))}
           </div>
         </div>
@@ -120,7 +135,7 @@ export default function HowToHelp() {
       <section style={styles.supportersSection}>
         <div style={styles.container}>
           <h2 style={styles.sectionTitle}>{supportersTitle}</h2>
-          <div style={styles.supportersGrid}>
+          <div className="howtohelp-supportersGrid" style={styles.supportersGrid}>
             {supporters.map((supporter, index) => (
               <div key={index} style={styles.supporterItem}>
                 {supporter.logo ? (
@@ -176,7 +191,7 @@ const styles = {
     letterSpacing: '1px',
   },
   introText: {
-    fontSize: '15px',
+    fontSize: '17px',
     color: '#555',
     maxWidth: '700px',
     margin: '0 auto',
@@ -186,7 +201,7 @@ const styles = {
   // About Section
   aboutSection: {
     padding: '40px 0 60px',
-    backgroundColor: '#fff',
+    backgroundColor: '#f8f9fa',
   },
   aboutGrid: {
     display: 'grid',
@@ -198,11 +213,12 @@ const styles = {
     paddingRight: '20px',
   },
   aboutParagraph: {
-    fontSize: '14px',
+    fontSize: '16px',
     color: '#444',
     marginBottom: '20px',
     textAlign: 'justify',
     lineHeight: 1.75,
+    letterSpacing: 0.25,
   },
   aboutImageContainer: {
     display: 'flex',
@@ -219,9 +235,9 @@ const styles = {
 
   // CTA Section
   ctaSection: {
-    padding: '40px 0',
+    padding: '15px 0',
     textAlign: 'center',
-    backgroundColor: '#fff',
+    backgroundColor: '#f8f9fa',
   },
   donateButton: {
     backgroundColor: '#0077CC',
@@ -239,7 +255,7 @@ const styles = {
   // Volunteer Section
   volunteerSection: {
     padding: '60px 0',
-    backgroundColor: '#f8f9fa',
+    backgroundColor: '#fff',
     textAlign: 'center',
   },
   sectionTitle: {
@@ -262,10 +278,10 @@ const styles = {
     padding: '20px',
   },
   volunteerLogo: {
-    width: '120px',
-    height: '60px',
+    width: '220px',
+    height: '100px',
     objectFit: 'contain',
-    marginBottom: '15px',
+    marginBottom: '18px',
   },
   volunteerName: {
     fontSize: '14px',

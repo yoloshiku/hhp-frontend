@@ -152,7 +152,18 @@ export default function Header() {
               <span className="nav-item">HOW TO HELP ▾</span>
               <div className="dropdown-menu">
                 <NavLink to="/how-to-help/">SUPPORT HHP</NavLink>
-                <NavLink to="/how-to-help#volunteer-section">VOLUNTEER</NavLink>
+                <NavLink
+                  to="/how-to-help#volunteer"
+                  onClick={(e) => {
+                    // force scroll to volunteer section on same page even if router doesn't "navigate"
+                    requestAnimationFrame(() => {
+                      const el = document.querySelector("#volunteer");
+                      if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+                    });
+                  }}
+                >
+                  VOLUNTEER
+                </NavLink>
                 <NavLink to="/how-to-help/intern">INTERN</NavLink>
                 <NavLink to="/how-to-help/become-hhp-partner">BECOME A HHP PARTNER</NavLink>
                 <NavLink to="/how-to-help/matching-donations">MATCHING DONATIONS</NavLink>
