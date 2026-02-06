@@ -159,7 +159,7 @@ export default function Intern() {
           {/* Form Link */}
           <p style={styles.formLinkText}>
             {formLinkText}{' '}
-            <a href="#" style={styles.link}>{formLinkLabel}</a>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSciGuQGvSdq8wcqdFu6TwOtT0JDY1sdX8DnsDTlSuQcKE-r8g/viewform" style={styles.link}>{formLinkLabel}</a>
           </p>
 
           {/* Google Form Checkbox */}
@@ -233,7 +233,7 @@ const styles = {
     alignItems: 'center',
   },
   heroContainer: {
-    maxWidth: '800px',
+    maxWidth: '1000px',
     margin: '0 auto',
     padding: '0 40px',
     width: '100%',
@@ -247,7 +247,7 @@ const styles = {
 
   // Main Container
   mainContainer: {
-    maxWidth: '800px',
+    maxWidth: '1200px',
     margin: '0 auto',
     padding: '40px 40px 80px',
   },
@@ -270,7 +270,7 @@ const styles = {
     margin: 0,
   },
   detailItem: {
-    fontSize: '14px',
+    fontSize: '16px',
     color: '#444',
     marginBottom: '6px',
   },
@@ -285,7 +285,7 @@ const styles = {
     margin: 0,
   },
   stepItem: {
-    fontSize: '14px',
+    fontSize: '16px',
     color: '#444',
     marginBottom: '6px',
   },
@@ -299,7 +299,7 @@ const styles = {
   },
   label: {
     display: 'block',
-    fontSize: '14px',
+    fontSize: '16px',
     fontWeight: '400',
     color: '#333',
     marginBottom: '8px',
@@ -310,7 +310,7 @@ const styles = {
   input: {
     width: '100%',
     padding: '10px 0',
-    fontSize: '14px',
+    fontSize: '16px',
     border: 'none',
     borderBottom: '1px solid #999',
     outline: 'none',
@@ -320,7 +320,7 @@ const styles = {
   textarea: {
     width: '100%',
     padding: '12px',
-    fontSize: '14px',
+    fontSize: '16px',
     border: '1px solid #ccc',
     borderRadius: '4px',
     outline: 'none',
@@ -338,7 +338,7 @@ const styles = {
   checkboxLabel: {
     display: 'flex',
     alignItems: 'center',
-    fontSize: '14px',
+    fontSize: '16px',
     color: '#444',
     cursor: 'pointer',
   },
@@ -350,7 +350,7 @@ const styles = {
 
   // Form Link
   formLinkText: {
-    fontSize: '14px',
+    fontSize: '16px',
     color: '#444',
     marginBottom: '20px',
   },
@@ -366,7 +366,7 @@ const styles = {
     color: '#fff',
     border: 'none',
     padding: '12px 28px',
-    fontSize: '14px',
+    fontSize: '16px',
     fontWeight: '600',
     borderRadius: '4px',
     cursor: 'pointer',
