@@ -5,33 +5,48 @@
   --oe-shadow: 0 12px 34px rgba(0, 0, 0, 0.08);
 }
 
-/* Page safety */
+/* ======================
+   PAGE SAFETY
+====================== */
 .oe-page {
   background: #ffffff;
   overflow-x: hidden;
 }
+
 .oe-page,
 .oe-page * {
   box-sizing: border-box;
 }
 
-/* Narrow layout */
+/* ======================
+   LAYOUT
+====================== */
 .oe-container {
-  max-width: 1000px;
+  max-width: 1120px;
   width: 100%;
   margin: 0 auto;
   padding: 0 20px;
 }
 
-/* Global body text standard */
-.oe-page p,
-.oe-page li {
+/* ======================
+   TYPOGRAPHY (SCOPED)
+   ⚠️ Does NOT affect Programs
+====================== */
+.oe-card p,
+.oe-card li {
   font-size: 16px;
   line-height: 1.75;
   color: rgba(0, 0, 0, 0.78);
 }
 
-/* HERO */
+.oe-body {
+  margin: 5px 0 14px;
+  text-align: left;
+}
+
+/* ======================
+   HERO
+====================== */
 .oe-hero {
   position: relative;
   min-height: 320px;
@@ -47,8 +62,17 @@
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(180deg, rgba(255,255,255,0.10), rgba(255,255,255,0.55) 45%, rgba(255,255,255,0.92)),
-    radial-gradient(900px 360px at 20% 25%, rgba(6, 83, 153, 0.18), transparent 60%);
+    linear-gradient(
+      180deg,
+      rgba(255,255,255,0.10),
+      rgba(255,255,255,0.55) 45%,
+      rgba(255,255,255,0.92)
+    ),
+    radial-gradient(
+      900px 360px at 20% 25%,
+      rgba(6, 83, 153, 0.18),
+      transparent 60%
+    );
 }
 
 .oe-heroInner {
@@ -75,12 +99,13 @@
   text-align: center;
 }
 
-/* SECTION */
+/* ======================
+   SECTION + CARD
+====================== */
 .oe-section {
   padding: 28px 0 72px;
 }
 
-/* Main card */
 .oe-card {
   border: 1px solid var(--oe-border);
   border-radius: 16px;
@@ -89,12 +114,9 @@
   padding: 18px;
 }
 
-.oe-body {
-  margin: 5px 0 14px;
-  text-align: left;
-}
-
-/* Videos */
+/* ======================
+   VIDEOS
+====================== */
 .oe-videosSection {
   margin-top: 10px;
 }
@@ -127,14 +149,18 @@
   border: 0;
 }
 
-/* Divider */
+/* ======================
+   DIVIDER
+====================== */
 .oe-divider {
   height: 1px;
   background: rgba(0, 0, 0, 0.08);
   margin: 18px 0 10px;
 }
 
-/* CTA */
+/* ======================
+   CTA
+====================== */
 .oe-ctaRow {
   margin-top: 14px;
   display: flex;
@@ -161,10 +187,6 @@
   opacity: 0.92;
 }
 
-.oe-buttonSecondary {
-  background: var(--oe-blue);
-}
-
 .oe-donateText {
   margin-top: 10px;
 }
@@ -174,7 +196,9 @@
   text-align: center;
 }
 
-/* Desktop videos (2 columns like your other pages) */
+/* ======================
+   DESKTOP
+====================== */
 @media (min-width: 920px) {
   .oe-videosGrid {
     grid-template-columns: 1fr 1fr;
@@ -182,12 +206,15 @@
   }
 }
 
-/* Mobile */
+/* ======================
+   MOBILE
+====================== */
 @media (max-width: 560px) {
   .oe-hero {
     min-height: 280px;
     padding: 96px 0 40px;
   }
+
   .oe-card {
     padding: 16px;
   }
