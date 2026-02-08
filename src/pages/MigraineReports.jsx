@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import shareLearnLupusImg from "../assets/migraine/after-charts/share-learn-lupus.png";
 import patientAdvocacyImg from "../assets/migraine/after-charts/service-patient-advocacy.jpg";
 import patientEducationImg from "../assets/migraine/after-charts/service-patient-education.png";
+import migraineHeroImg from "../assets/migraine/migraine-hero.png";
 
 /**
  * Auto-load every .png chart under src/assets/migraine/charts/
@@ -41,7 +42,10 @@ export default function MigraineData() {
       {
         title: "Causes",
         folder: "causes",
-        items: [{ label: "Causes", file: "causes.png" }],
+        items: [
+          { label: "Causes-Food", file: "causes.png" },
+          { label: "Causes", file: "causes-2.png" }
+        ],
       },
       {
         title: "Symptoms",
@@ -156,7 +160,7 @@ export default function MigraineData() {
       return (
         <div className="md-emptyState md-curvedCard" id="md-chart-area">
           <div className="md-emptyTitle">Charts</div>
-          <div className="md-emptyText">Select any subcategory on the left to view its chart.</div>
+          <div className="md-emptyText">Select any subcategory on the list to view its chart.</div>
         </div>
       );
     }
@@ -186,8 +190,21 @@ export default function MigraineData() {
     <div className="md-page">
       <div className="md-container">
         {/* HERO */}
+        {/* Hero Image */}
+        <section className="hhp-hero">
+          <img className="hhp-heroImg" src={migraineHeroImg} alt="Migraine Data" />
+
+          <div className="hhp-heroOverlay">
+            <div className="hhp-heroInner">
+              <div className="hhp-heroEyebrow">HUMAN HEALTH PROJECT PROGRAM</div>
+              <h1 className="hhp-heroTitle">Migraine Data</h1>
+              {/* optional */}
+              {/* <div className="hhp-heroSub">General Information</div> */}
+            </div>
+          </div>
+        </section>
         <header className="md-hero md-curvedCard">
-          <h1 className="md-title">Top Migraine Data</h1>
+          <h1 className="md-title">Migraine Data</h1>
 
           <p>
             Migraines are a headache disorder characterized by recurrent headaches that range from moderate to
