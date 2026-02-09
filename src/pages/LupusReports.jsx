@@ -127,16 +127,19 @@ export default function LupusData() {
       relative: `${group.folder}/${f}`,
     }));
 
-    const key = `${group.folder}/${item.label}`; // stable active key (works for file or files)
+    const key = `${group.folder}/${item.label}`;
 
-    setSelected({
-      title: item.label,
-      key,
-      images,
-    });
+    setSelected({ title: item.label, key, images });
 
+    // scroll page to chart
     const el = document.getElementById("ld-chart-area");
     if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+
+    // reset inner chart scroll to top
+    requestAnimationFrame(() => {
+      const viewport = document.querySelector(".ld-chartViewport");
+      if (viewport) viewport.scrollTop = 0;
+    });
   };
 
   const SelectedChart = () => {
@@ -154,27 +157,26 @@ export default function LupusData() {
         <div className="ld-card ld-curvedCard">
           <h3 className="ld-cardTitle">{selected.title}</h3>
 
-          <div className="ld-chartStack">
-            {selected.images.map((img, idx) => (
-              <div className="ld-imgWrap" key={`${img.relative}-${idx}`}>
-                {img.src ? (
-                  <img
-                    className="ld-img"
-                    src={img.src}
-                    alt={`${selected.title} ${idx + 1}`}
-                    loading="lazy"
-                  />
-                ) : (
-                  <div className="ld-missingImg">
-                    Image not found:
-                    <code className="ld-code">{img.relative}</code>
-                    <div className="ld-missingHint">
-                      Make sure the file exists and is named exactly as listed.
+          <div className="ld-chartViewport">
+            <div className="ld-chartStack">
+              {selected.images.map((img, idx) => (
+                <div className="ld-imgWrap" key={`${img.relative}-${idx}`}>
+                  {img.src ? (
+                    <img
+                      className="ld-img"
+                      src={img.src}
+                      alt={`${selected.title} ${idx + 1}`}
+                      loading="lazy"
+                    />
+                  ) : (
+                    <div className="ld-missingImg">
+                      Image not found:
+                      <code className="ld-code">{img.relative}</code>
                     </div>
-                  </div>
-                )}
-              </div>
-            ))}
+                  )}
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>

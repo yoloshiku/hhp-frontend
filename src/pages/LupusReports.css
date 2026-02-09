@@ -210,6 +210,7 @@
 
 .ld-card {
   padding: 18px;
+  overflow: visible;
 }
 .ld-cardTitle {
   margin: 0 0 10px;
@@ -226,9 +227,10 @@
 .ld-imgWrap {
   width: 100%;
   max-width: 980px;
-  margin: 0 auto;
-  min-height: 560px;
-  padding: 18px;
+  margin: 0;
+  max-height: 560px;
+  overflow-y: auto;
+  padding: 0;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -236,11 +238,37 @@
   border-radius: 16px;
   background: #fff;
 }
+.ld-chartViewport {
+  width: 100%;
+  max-height: 560px;       /* adjust height */
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  /* ensures you can see the very top edge */
+  padding: 8px 0;
+  scroll-padding-top: 8px;
+}
 .ld-img {
   width: 100%;
-  height: auto;
+  height: auto !important;
+  display: block;
+  object-fit: top center; 
+}
+.ld-imgWrap::-webkit-scrollbar {
+  width: 8px;
 }
 
+.ld-imgWrap::-webkit-scrollbar-thumb {
+  background: rgba(0,0,0,0.25);
+  border-radius: 6px;
+}
+.ld-imgWrap,
+.ld-chartStack,
+.ld-chartViewport {
+  display: block !important;
+  align-items: initial !important;
+  justify-content: initial !important;
+}
 /* Missing image helper */
 .ld-missingImg {
   font-size: 14px;
@@ -453,3 +481,4 @@
     grid-template-columns: 1fr;
   }
 }
+
