@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from "react";
+import React, { useMemo, useState, useRef, useEffect } from "react";
 import "./MigraineReports.css";
 import { Link } from "react-router-dom";
 /* After-charts images */
@@ -137,6 +137,12 @@ export default function MigraineData() {
 
   const [selected, setSelected] = useState(null);
 
+  const chartViewportRef = useRef(null);
+
+  useEffect(() => {
+    if (chartViewportRef.current) chartViewportRef.current.scrollTop = 0;
+  }, [selected?.relative]);
+
   const toggleSection = (title) => {
     setOpenSections((prev) => ({ ...prev, [title]: !prev[title] }));
   };
@@ -177,8 +183,10 @@ export default function MigraineData() {
               <div className="md-missingHint">Make sure the file exists and is named exactly as listed.</div>
             </div>
           ) : (
-            <div className="md-imgWrap">
-              <img className="md-img" src={selected.src} alt={selected.title} loading="lazy" />
+            <div className="md-chartViewport" ref={chartViewportRef}>
+              <div className="md-imgWrap">
+                <img className="md-img" src={selected.src} alt={selected.title} loading="lazy" />
+              </div>
             </div>
           )}
         </div>

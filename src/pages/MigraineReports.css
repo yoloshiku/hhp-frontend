@@ -17,7 +17,7 @@
 
 /* Narrow layout */
 .md-container {
-  max-width: 1000px;
+  max-width: 1200px;
   width: 100%;
   margin: 0 auto;
   padding: 0 20px;
@@ -238,7 +238,8 @@
 
 /* Card wrapper for chart */
 .md-card {
-  padding: 18px;
+  padding: 12px 16px;
+  overflow: visible;
 }
 .md-cardTitle {
   margin: 0 0 10px;
@@ -247,26 +248,40 @@
   color: var(--md-ink);
 }
 
+
 /* Chart image area (taller) */
 .md-imgWrap {
   width: 100%;
   max-width: 980px;
-  margin: 0 auto;
-
-  min-height: 560px;
-  padding: 18px;
+  margin: 0;
+  padding: 0;
 
   display: flex;
   align-items: center;
   justify-content: center;
 
-  border: 1px solid rgba(0, 0, 0, 0.08);
-  border-radius: 16px;
+  border: 0;
+  border-radius: 0px;
   background: #fff;
 }
 .md-img {
   width: 100%;
-  height: auto;
+  height: auto !important;
+  display: block;
+  object-fit: contain;
+  object-position: top center;
+}
+.md-chartViewport {
+  width: 100%;
+  max-height: 560px;      /* visible window height */
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 8px 0;
+}
+.md-chartStack {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
 }
 
 /* Missing image helper */
