@@ -5,14 +5,13 @@ import "./LupusReports.css";
 /* Hero */
 import lupusHeroImg from "../assets/lupus/after-charts/lupus-hero.png";
 
-/* After-charts images (reuse same ones or swap if you have lupus-specific) */
+/* After-charts images */
 import shareLearnMigraineImg from "../assets/lupus/after-charts/share-learn-migraine.png";
 import patientAdvocacyImg from "../assets/lupus/after-charts/service-patient-advocacy.jpg";
 import patientEducationImg from "../assets/lupus/after-charts/service-patient-education.png";
 
 /**
  * Auto-load every .png chart under src/assets/lupus/charts/
- * Filenames must match the naming list.
  */
 const chartImages = import.meta.glob("../assets/lupus/charts/**/*.png", {
   eager: true,
@@ -33,7 +32,10 @@ export default function LupusData() {
         items: [
           { label: "Age", file: "age.png" },
           { label: "Gender", file: "gender.png" },
-          { label: "General Health", file: "general-health.png" },
+          {
+            label: "General Health",
+            files: ["general-health.png", "general-health-1.png", "general-health-2.png"],
+          },
           { label: "Quality of Life", file: "quality-of-life.png" },
           { label: "Heredity", file: "heredity.png" },
           { label: "Healthcare Provider", file: "healthcare-provider.png" },
@@ -42,11 +44,7 @@ export default function LupusData() {
           { label: "Response Map", file: "response-map.png" },
         ],
       },
-      {
-        title: "Causes",
-        folder: "causes",
-        items: [{ label: "Causes", file: "causes.png" }],
-      },
+      { title: "Causes", folder: "causes", items: [{ label: "Causes", files:[ "causes.png", "causes-1.png" ],}] },
       {
         title: "Symptoms",
         folder: "symptoms",
@@ -54,7 +52,7 @@ export default function LupusData() {
           { label: "Severity", file: "severity.png" },
           { label: "Duration", file: "duration.png" },
           { label: "Frequency", file: "frequency.png" },
-          { label: "Onset", file: "onset.png" },
+          { label: "Onset", files: ["onset.png", "onset-1.png" ]},
           { label: "Hormonal Changes", file: "hormonal-changes.png" },
         ],
       },
@@ -74,7 +72,6 @@ export default function LupusData() {
         items: [
           { label: "Types of Treatments", file: "types-of-treatments.png" },
           { label: "Efficacy", file: "efficacy.png" },
-          { label: "Side Effects", file: "side-effects.png" },
           { label: "Adherence", file: "adherence.png" },
         ],
       },
@@ -108,6 +105,14 @@ export default function LupusData() {
     return initial;
   });
 
+  /**
+   * selected shape:
+   * {
+   *   title: string,
+   *   key: string,               // used for active menu item
+   *   images: [{ src, relative }]
+   * }
+   */
   const [selected, setSelected] = useState(null);
 
   const toggleSection = (title) => {
@@ -115,13 +120,19 @@ export default function LupusData() {
   };
 
   const handleClickItem = (group, item) => {
-    const relative = `${group.folder}/${item.file}`;
-    const src = getChartSrc(relative);
+    const files = item.files || [item.file];
+
+    const images = files.map((f) => ({
+      src: getChartSrc(`${group.folder}/${f}`),
+      relative: `${group.folder}/${f}`,
+    }));
+
+    const key = `${group.folder}/${item.label}`; // stable active key (works for file or files)
 
     setSelected({
       title: item.label,
-      src,
-      relative,
+      key,
+      images,
     });
 
     const el = document.getElementById("ld-chart-area");
@@ -143,17 +154,28 @@ export default function LupusData() {
         <div className="ld-card ld-curvedCard">
           <h3 className="ld-cardTitle">{selected.title}</h3>
 
-          {!selected.src ? (
-            <div className="ld-missingImg">
-              Image not found:
-              <code className="ld-code">{selected.relative}</code>
-              <div className="ld-missingHint">Make sure the file exists and is named exactly as listed.</div>
-            </div>
-          ) : (
-            <div className="ld-imgWrap">
-              <img className="ld-img" src={selected.src} alt={selected.title} loading="lazy" />
-            </div>
-          )}
+          <div className="ld-chartStack">
+            {selected.images.map((img, idx) => (
+              <div className="ld-imgWrap" key={`${img.relative}-${idx}`}>
+                {img.src ? (
+                  <img
+                    className="ld-img"
+                    src={img.src}
+                    alt={`${selected.title} ${idx + 1}`}
+                    loading="lazy"
+                  />
+                ) : (
+                  <div className="ld-missingImg">
+                    Image not found:
+                    <code className="ld-code">{img.relative}</code>
+                    <div className="ld-missingHint">
+                      Make sure the file exists and is named exactly as listed.
+                    </div>
+                  </div>
+                )}
+              </div>
+            ))}
+          </div>
         </div>
       </section>
     );
@@ -163,7 +185,12 @@ export default function LupusData() {
     <div className="ld-page">
       {/* HERO IMAGE (exact HHP edit) */}
       <section className="hhp-hero">
-        <img className="hhp-heroImg" src={lupusHeroImg} alt="Lupus Data" />
+        <img
+          className="hhp-heroImg"
+          src={lupusHeroImg}
+          alt="Lupus Data"
+          style={{ objectFit: "cover", objectPosition: "center 15%" }}
+        />
         <div className="hhp-heroOverlay">
           <div className="hhp-heroInner">
             <div className="hhp-heroEyebrow">HUMAN HEALTH PROJECT PROGRAM</div>
@@ -178,46 +205,51 @@ export default function LupusData() {
           <p>
             Lupus is an autoimmune disease that occurs when the immune system attacks tissues and organs.
           </p>
+
           <p>
-            Inflammation caused by lupus can damage many different parts of the body including the joints, skin,
-            kidneys, blood cells, brain, heart, and lungs.
+            Inflammation caused by lupus can damage many different parts of the body including the joints, skin, kidneys,
+            blood cells, brain, heart, and lungs.
           </p>
 
           <p><strong>There are several types of lupus:</strong></p>
-          <ul>
+
+          <ul className="ld-bulletList">
             <li>
-              <strong>Systemic lupus erythematosus (SLE)</strong> is the most common type. It can be mild or severe
-              and can affect many parts of the body.
+              <strong>Systemic lupus erythematosus (SLE):</strong> The most common type.
+              It can be mild or severe and can affect many parts of the body.
             </li>
+
             <li>
-              <strong>Cutaneous lupus</strong> can be categorized into three main forms: chronic cutaneous lupus
-              (CCLE), subacute cutaneous lupus (SCLE) and acute cutaneous lupus (ACLE).
+              <strong>Cutaneous lupus:</strong> Includes chronic cutaneous lupus (CCLE),
+              subacute cutaneous lupus (SCLE), and acute cutaneous lupus (ACLE).
             </li>
+
             <li>
-              <strong>Drug-induced lupus</strong> is caused by certain prescription drugs.
+              <strong>Drug-induced lupus:</strong> Caused by certain prescription drugs.
             </li>
+
             <li>
-              <strong>Neonatal lupus</strong> is a rare type of lupus that affects newborns. It is caused by the
-              transfer of lupus antibodies from the mother who has lupus to the fetus.
+              <strong>Neonatal lupus:</strong> A rare type affecting newborns, caused by
+              the transfer of lupus antibodies from mother to fetus.
+            </li>
+
+            <li>
+              Lupus can be difficult to diagnose because its signs and symptoms can be vague, and often mimic those of other
+              conditions. Lupus is more common in women of childbearing age; however, men, children, and teenagers can develop lupus as
+              well. The disease can affect all ages, but people with lupus usually develop the disease between the ages of
+              15-44.
             </li>
           </ul>
-
           <p>
-            Lupus can be difficult to diagnose because its signs and symptoms can be vague, and often mimic those
-            of other conditions. Lupus is more common in women of childbearing age; however, men, children, and
-            teenagers can develop lupus as well. The disease can affect all ages, but people with lupus usually
-            develop the disease between the ages of 15-44.
-          </p>
-          <p>
-            Researchers believe that lupus develops in response to a combination of factors both inside and
-            outside the body, including hormones, genetics, and environment. It appears that people with an
-            inherited predisposition for lupus may develop the disease when they are exposed to something in the
-            environment that can trigger lupus. The cause of lupus in most cases, however, is unknown.
+            Researchers believe that lupus develops in response to a combination of factors both inside and outside the
+            body, including hormones, genetics, and environment. It appears that people with an inherited predisposition
+            for lupus may develop the disease when they are exposed to something in the environment that can trigger lupus.
+            The cause of lupus in most cases, however, is unknown.
           </p>
 
           <div className="ld-note">
-            <strong>PLEASE NOTE:</strong> The data in the links below was collected from 2016 to 2020 and as a
-            result some of it may now be out of date.
+            <strong>PLEASE NOTE:</strong> The data in the links below was collected from 2016 to 2020 and as a result some
+            of it may now be out of date.
           </div>
         </header>
 
@@ -244,13 +276,12 @@ export default function LupusData() {
                     {isOpen && (
                       <div className="ld-menuItems">
                         {group.items.map((item) => {
-                          const isActive =
-                            selected?.title === item.label &&
-                            selected?.relative === `${group.folder}/${item.file}`;
+                          const itemKey = `${group.folder}/${item.label}`;
+                          const isActive = selected?.key === itemKey;
 
                           return (
                             <button
-                              key={`${group.folder}/${item.file}`}
+                              key={itemKey}
                               type="button"
                               className={`ld-menuItem ${isActive ? "active" : ""}`}
                               onClick={() => handleClickItem(group, item)}
@@ -287,11 +318,7 @@ export default function LupusData() {
                       moderate to severe.
                     </p>
 
-                    <Link
-                      to="/shared-patient-information/migraine"
-                      className="ld-btn"
-                      aria-label="View Migraine Data"
-                    >
+                    <Link to="/shared-patient-information/migraine" className="ld-btn" aria-label="View Migraine Data">
                       VIEW MIGRAINE DATA
                     </Link>
                   </div>
@@ -326,11 +353,7 @@ export default function LupusData() {
                   </div>
                   <div className="ld-serviceTitle">Patient Advocacy</div>
                   <p className="ld-serviceDesc">HHP provides access to a supportive peer-to-peer community.</p>
-                  <Link
-                    to="/what-we-do/patient-advocacy/los-angeles"
-                    className="ld-btn"
-                    aria-label="View Services"
-                  >
+                  <Link to="/what-we-do/patient-advocacy/los-angeles" className="ld-btn" aria-label="View Services">
                     VIEW SERVICES
                   </Link>
                 </div>
@@ -340,14 +363,8 @@ export default function LupusData() {
                     <img src={patientEducationImg} alt="Patient Education" />
                   </div>
                   <div className="ld-serviceTitle">Patient Education</div>
-                  <p className="ld-serviceDesc">
-                    We help patients through education and peer-to-peer information.
-                  </p>
-                  <Link
-                    to="/what-we-do/learning-academy/videos"
-                    className="ld-btn"
-                    aria-label="Learn More Patient Education"
-                  >
+                  <p className="ld-serviceDesc">We help patients through education and peer-to-peer information.</p>
+                  <Link to="/what-we-do/learning-academy/videos" className="ld-btn" aria-label="Learn More Patient Education">
                     LEARN MORE
                   </Link>
                 </div>
