@@ -221,7 +221,7 @@
 
 /* TWO COL BELOW VIDEO */
 .std2d-twoCol {
-  margin-top: 22px;
+  margin-top: 32px;
   display: grid;
   gap: 18px;
   grid-template-columns: 1fr;
@@ -290,19 +290,12 @@
   padding: 10px;
 }
 
-.std2d-qrCaption {
-  color: rgba(0, 0, 0, 0.78);
-}
 
 .std2d-qrTitle {
   margin: 0;
   font-weight: 900;
   font-size: 18px;
   color: var(--std2d-ink);
-}
-
-.std2d-qrText {
-  margin: 6px 0 0;
 }
 
 .std2d-ctaRow {

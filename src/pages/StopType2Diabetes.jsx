@@ -150,13 +150,6 @@ export default function StopType2Diabetes() {
                   src={qrImg}
                   alt='Scan to donate to "Stop Type 2 Diabetes Before It Starts"'
                 />
-                <div className="std2d-qrCaption">
-                  <p className="std2d-qrTitle">Scan or click to donate</p>
-                  <p className="std2d-qrText">
-                    Your support helps complete the final 12 videos and
-                    supporting materials.
-                  </p>
-                </div>
               </a>
 
               <div className="std2d-ctaRow">
@@ -170,9 +163,6 @@ export default function StopType2Diabetes() {
                 </a>
               </div>
 
-              <p className="std2d-note">
-                If you’re on mobile, tap the QR card or the button to donate.
-              </p>
             </aside>
           </div>
         </div>
@@ -472,7 +462,7 @@ export default function StopType2Diabetes() {
                     target="_blank"
                     rel="noreferrer"
                   >
-                    Donate Now
+                     Donate via GoFundMe
                   </a>
                 </div>
               </div>
