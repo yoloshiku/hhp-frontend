@@ -1,11 +1,6 @@
 import { useState } from "react";
 import "./StopType2Diabetes.css";
 
-// Put your QR image here:
-// Suggested: src/assets/stop-type2diabetes-qr.png
-// Then import it like below.
-import qrImg from "../assets/stop-type2diabetes-qr.png";
-
 const GOFUNDME_URL =
   "https://www.gofundme.com/f/stop-type2diabetes-before-it-starts";
 
@@ -121,49 +116,18 @@ export default function StopType2Diabetes() {
             </section>
 
             {/* RIGHT: QR DONATION */}
-            <aside
-              className="std2d-card std2d-cardPadded"
-              aria-label="Donate via QR code"
-            >
-              <div className="std2d-cardHeaderRow">
-                <h2 className="std2d-cardTitle">Donate via GoFundMe</h2>
-                <a
-                  className="std2d-link"
-                  href={GOFUNDME_URL}
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  Open GoFundMe
-                </a>
-              </div>
+            <div className="container">
 
-              <a
-                className="std2d-qrLink"
-                href={GOFUNDME_URL}
-                target="_blank"
-                rel="noreferrer"
-                aria-label="Open GoFundMe fundraising page"
-                title="Click to donate on GoFundMe"
-              >
-                <img
-                  className="std2d-qrImg"
-                  src={qrImg}
-                  alt='Scan to donate to "Stop Type 2 Diabetes Before It Starts"'
-                />
-              </a>
-
-              <div className="std2d-ctaRow">
-                <a
-                  className="std2d-button std2d-buttonFull"
-                  href={GOFUNDME_URL}
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  Donate on GoFundMe
-                </a>
-              </div>
-
-            </aside>
+              <iframe
+                src="https://www.gofundme.com/f/stop-type2diabetes-before-it-starts/widget/large"
+                width="100%"
+                height="600"
+                frameBorder="0"
+                scrolling="no"
+                title="Stop Type-2 Diabetes"
+                style={{ border: "none" }}
+              ></iframe>
+            </div>
           </div>
         </div>
       </section>
@@ -462,7 +426,7 @@ export default function StopType2Diabetes() {
                     target="_blank"
                     rel="noreferrer"
                   >
-                     Donate via GoFundMe
+                    Donate via GoFundMe
                   </a>
                 </div>
               </div>
