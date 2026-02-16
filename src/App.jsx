@@ -32,6 +32,7 @@ import StopType2Diabetes from "./pages/StopType2Diabetes";
 import SharedPatientInformation from "./pages/SharedPatientInformation";
 import MigraineReports from "./pages/MigraineReports";
 import LupusReports from "./pages/LupusReports";
+import ProgramCouncil from "./pages/ProgramCouncil";
 
 function App() {
   return (
@@ -120,6 +121,8 @@ function App() {
 
                 {/* Donate */}
                 <Route path="/donate" element={<Donate />} />
+
+                <Route path="/about/program-council" element={<ProgramCouncil />} />
               </Routes>
             </main>
 
