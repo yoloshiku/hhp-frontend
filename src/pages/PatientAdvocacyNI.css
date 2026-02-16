@@ -26,8 +26,7 @@
 /* === GLOBAL BODY TEXT STANDARD (same as your std2d baseline) === */
 .pani-page p,
 .pani-page li {
-  font-size: 16px;
-  line-height: 1.75;
+  font-size: 15px;
   color: rgba(0, 0, 0, 0.78);
 }
 
