@@ -33,6 +33,10 @@ import SharedPatientInformation from "./pages/SharedPatientInformation";
 import MigraineReports from "./pages/MigraineReports";
 import LupusReports from "./pages/LupusReports";
 import ProgramCouncil from "./pages/ProgramCouncil";
+import MeetTeamAdvisoryBoard from "./pages/MeetTeamAdvisoryBoard";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
+import TermsOfService from "./pages/TermsOfService";
+import ContactUs from "./pages/ContactUs";
 
 function App() {
   return (
@@ -123,6 +127,13 @@ function App() {
                 <Route path="/donate" element={<Donate />} />
 
                 <Route path="/about/program-council" element={<ProgramCouncil />} />
+                <Route
+                  path="/meet-team-advisory-board"
+                  element={<MeetTeamAdvisoryBoard />}
+                />
+                <Route path="/privacy" element={<PrivacyPolicy />} />
+                <Route path="/terms" element={<TermsOfService />} />
+                <Route path="/contact" element={<ContactUs />} />
               </Routes>
             </main>
 
