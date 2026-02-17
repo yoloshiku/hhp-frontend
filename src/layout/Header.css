@@ -37,7 +37,27 @@
   margin-left: auto;
   gap: 16px;
 }
+.hhp-topbar {
+  width: 100%;
+  background: #ffffff;
+  padding: 5px 5px;
+  text-align: center;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
 
+.hhp-topbar-link {
+  font-family: "Outfit", system-ui, -apple-system, BlinkMacSystemFont,
+               "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-weight: 200;           
+  font-size: 20px;              
+  letter-spacing: 0.3px;        
+  color: #065399;
+  text-decoration: none;
+}
+
+.hhp-topbar-link:hover {
+  text-decoration: underline;
+}
 /* NAV */
 .hhp-nav {
   display: flex;
@@ -445,6 +465,12 @@
     color: #000;
     font-weight: 600;
   }
+   .hhp-topbar {
+    padding: 10px 12px;
+  }
+  .hhp-topbar-link {
+    font-size: 14px;
+  }
 }
 
 /* =========================
@@ -479,3 +505,4 @@
     display: inline-flex !important;
   }
 }
+
