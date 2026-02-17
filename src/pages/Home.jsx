@@ -63,6 +63,7 @@ export default function Home() {
       <section className="hero-section">
         <div className="container">
           <div className="hero-content">
+            {/* Video */}
             <div className="video-container">
               <div className="video-thumbnail">
                 <iframe
@@ -72,46 +73,21 @@ export default function Home() {
                   allow="autoplay; encrypted-media"
                   allowFullScreen
                 ></iframe>
-                {/* <span className="video-badge">Stop Type 2 Diabetes Before It Starts Campaign</span> */}
-                {/* <div className="video-headline">
-                  <span>STOP</span>
-                  <span>TYPE 2</span>
-                  <span>DIABETES</span>
-                  <span className="video-subtitle">BEFORE IT STARTS</span>
-                </div> */}
-                {/* <a
-                  href="https://www.youtube.com/watch?v=JxZLRnaZ4LI"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="youtube-badge"
-                >
-                  <svg width="20" height="14" viewBox="0 0 20 14" fill="currentColor">
-                    <path d="M19.615 2.184c-.228-.853-.896-1.526-1.743-1.756C16.29 0 10 0 10 0S3.71 0 2.128.428c-.847.23-1.515.903-1.743 1.756C0 3.768 0 7 0 7s0 3.232.385 4.816c.228.853.896 1.526 1.743 1.756C3.71 14 10 14 10 14s6.29 0 7.872-.428c.847-.23 1.515-.903 1.743-1.756C20 10.232 20 7 20 7s0-3.232-.385-4.816zM8 10V4l5.196 3L8 10z" fill="#FF0000"/>
-                  </svg>
-                  Watch on YouTube
-                </a> */}
               </div>
             </div>
+
+            {/* Donation Card */}
             <div className="support-card">
-              <h2>Support &quot;Stop Type 2 Diabetes Before It Starts&quot;</h2>
-              <div className="fundraising-progress">
-                <div className="progress-bar">
-                  <div className="progress-fill" style={{ width: '15%' }}></div>
-                </div>
-                <p className="progress-text">
-                  <strong>$663</strong> raised of $8,000 goal · 16 donations
-                </p>
-              </div>
-              <div className="support-buttons">
-                <a href="https://gofund.me/c24593610" className="btn btn-green">
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
-                  </svg>
-                  GoFundMe
-                </a>
+              <div className="support-card-inner">
+                <iframe
+                  src="https://www.gofundme.com/f/stop-type2diabetes-before-it-starts/widget/large"
+                  title="Stop Type-2 Diabetes" scrolling="no"
+                ></iframe>
               </div>
             </div>
+
           </div>
+
         </div>
       </section>
 
@@ -153,16 +129,16 @@ export default function Home() {
           <div className="impact-content">
             <h2>Our Impact Peer to Peer Program</h2>
             <p>
-              When facing a difficult health situation, we need information, education, and support. 
-              We need accurate, unbiased, user-friendly information to help best deal with our health issues. 
-              We need access to education to be able to better understand and manage our conditions and how 
-              our healthcare system works (locally). We need support when we are vulnerable, to be shown the way, 
+              When facing a difficult health situation, we need information, education, and support.
+              We need accurate, unbiased, user-friendly information to help best deal with our health issues.
+              We need access to education to be able to better understand and manage our conditions and how
+              our healthcare system works (locally). We need support when we are vulnerable, to be shown the way,
               to be heard and to know our rights and all our treatment options.
             </p>
             <p>
-              WHY HHP? We solve this problem by providing information, education and support. Information is 
-              provided through our Shared Patient Information (SPI) Program. Education is provided through our 
-              Patient Education programs and support is provided through HHP&apos;s Patient Advocacy. The combination 
+              WHY HHP? We solve this problem by providing information, education and support. Information is
+              provided through our Shared Patient Information (SPI) Program. Education is provided through our
+              Patient Education programs and support is provided through HHP&apos;s Patient Advocacy. The combination
               of these elements empowers individuals to take control and navigate their health care well.
             </p>
           </div>
@@ -223,10 +199,12 @@ export default function Home() {
       </section>
 
       <style jsx>{`
-        /* Hero Section */
-        .hero-section {
-          background: #f5f5f5;
-          padding: 40px 0;
+       .hero-content {
+          margin-top: 2rem;
+          display: grid;
+          grid-template-columns: 1.2fr 1fr;
+          gap: 40px;
+          align-items: stretch;
         }
 
         .hero-content {
@@ -261,7 +239,6 @@ export default function Home() {
           z-index: 0;
           border: 0;
         }
-
 
         .video-badge {
           background: #0066a1;
@@ -317,12 +294,46 @@ export default function Home() {
           background: rgba(0, 0, 0, 0.9);
         }
 
+        .video-container,
         .support-card {
-          background: white;
           border-radius: 12px;
-          padding: 30px;
-          box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+          overflow: hidden;
+          height: 300px; /* smaller height */
+          box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
         }
+
+        .video-thumbnail,
+        .support-card iframe {
+          width: 100%;
+          height: 100%;
+          border: none;
+          border-radius: 12px;
+        }
+
+       .support-card {
+        background: white;
+        border-radius: 12px;
+        height: 300px;       
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        display: flex;
+        align-items: center;      
+        justify-content: center;  
+        padding: 15px;
+      }
+
+      .support-card-inner {
+        width: 100%;
+        max-width: 900px;    
+        height: auto;
+      }
+
+      .support-card iframe {
+        width: 100%;
+        height: 200px;   
+        border: none;
+        border-radius: 12px;
+      }
+
 
         .support-card h2 {
           font-size: 22px;
