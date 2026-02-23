@@ -31,7 +31,7 @@ export default function Intern() {
   const fullNameLabel = "Full Name";
   const emailLabel = "Email";
   const areasOfInterestLabel = "Areas of Interest";
-  const checkboxesLabel = "Checkboxes";
+  const checkboxesLabel = "Application Confirmation";
   const googleFormCheckboxLabel = "I have filled out the Google Form mentioned above";
   const professionalSummaryLabel = "Please provide a professional summary and how you are a good fit for HHP (Limit your summary to 200-300 words)";
   const formLinkText = "For your application to be processed, complete the Q&A in this form";
