@@ -100,12 +100,6 @@ const HeartIcon = () => (
   </svg>
 );
 
-const HeartHandsIcon = () => (
-  <svg width="120" height="120" viewBox="0 0 24 24" fill="#e53935" stroke="none">
-    <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
-  </svg>
-);
-
 export default function AboutUs() {
   return (
     <div className="section">
@@ -195,13 +189,21 @@ export default function AboutUs() {
 
         {/* Support HHP Section */}
         <section className="about-support">
-          <h2 className="about-support__title">{aboutUsContent.support.title}</h2>
-          <div className="about-support__grid">
-            <div className="about-support__donate-box">
-              <h3 className="about-support__donate-title">{aboutUsContent.support.donateTitle}</h3>
+          <h2 className="about-support__title">
+            {aboutUsContent.support.title}
+          </h2>
+          <div className="about-support__wrapper">
+            
+            {/* Left - Donate Content */}
+            <div className="about-support__left">
+              <h3 className="about-support__donate-title">
+                {aboutUsContent.support.donateTitle}
+              </h3>
+
               <p className="about-support__donate-text">
                 {aboutUsContent.support.donateText}
               </p>
+
               <Link
                 to="/donate"
                 className="about-support__donate-button"
@@ -209,9 +211,16 @@ export default function AboutUs() {
                 {aboutUsContent.support.buttonText}
               </Link>
             </div>
-            <div className="about-support__heart">
-              <HeartHandsIcon />
+
+            {/* Right - Full Image */}
+            <div className="about-support__right">
+              <img
+                src="https://humanhealthproject.org/wp-content/uploads/2023/09/donate-giving-heart.webp"
+                alt="Hands holding a red heart"
+                className="about-support__image"
+              />
             </div>
+
           </div>
         </section>
 
