@@ -48,7 +48,16 @@ export default function Header() {
     return "User";
   };
 
-  return (
+return (
+  <>
+    {/* Non-sticky announcement bar (scrolls away) */}
+    <div className="hhp-topbar">
+      <Link to="join-patient-advisory-board" className="hhp-topbar-link" onClick={closeMobile}>
+        Join Our Patient Advisory Board – Learn More
+      </Link>
+    </div>
+
+    {/* Sticky header only */}
     <header className="hhp-header">
       <div className="hhp-header-inner">
         {/* LOGO */}
@@ -414,5 +423,6 @@ export default function Header() {
         </div>
       )}
     </header>
-  );
+  </>
+);
 }
