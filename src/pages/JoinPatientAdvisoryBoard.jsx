@@ -1,5 +1,5 @@
 import React from "react";
-import Programs from "../components/programs";
+import Programs from "../components/Programs";
 import "./JoinPatientAdvisoryBoard.css";
 
 export default function JoinPatientAdvisoryBoard() {
