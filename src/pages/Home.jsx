@@ -80,7 +80,7 @@ export default function Home() {
             <div className="support-card">
               <div className="support-card-inner">
                 <iframe
-                  src="https://www.gofundme.com/f/stop-type2diabetes-before-it-starts/widget/large"
+                  src="https://www.gofundme.com/f/stop-type2diabetes-before-it-starts/widget/medium"
                   title="Stop Type-2 Diabetes" scrolling="no"
                 ></iframe>
               </div>
