@@ -18,6 +18,8 @@ export default function Header() {
     patientAdvocacy: false,
     learningAcademy: false,
     stopT2D: false,
+    spi: false,
+    newSection: false,
   });
 
   const toggle = (key) => setOpenGroup((s) => ({ ...s, [key]: !s[key] }));
@@ -144,9 +146,17 @@ return (
                   </div>
                 </div>
 
-                <NavLink to="/what-we-do/shared-patient-information">
-                  SHARED PATIENT INFORMATION
-                </NavLink>
+                <div className="dropdown-submenu">
+                  <span className="submenu-title">
+                    SHARED PATIENT INFORMATION <span>›</span>
+                  </span>
+                  <div className="dropdown-submenu-menu">
+                    <NavLink to="/what-we-do/shared-patient-information">INTRODUCTION</NavLink>
+                    <NavLink to="/shared-patient-information/migraine">MIGRAINE</NavLink>
+                    <NavLink to="/shared-patient-information/lupus">LUPUS</NavLink>
+                    <NavLink to="/shared-patient-information/narratives">NARRATIVES</NavLink>
+                  </div>
+                </div>
               </div>
             </div>
 
@@ -176,6 +186,20 @@ return (
                 <NavLink to="/how-to-help/intern">INTERN</NavLink>
                 <NavLink to="/how-to-help/become-hhp-partner">BECOME A HHP PARTNER</NavLink>
                 <NavLink to="/how-to-help/matching-donations">MATCHING DONATIONS</NavLink>
+              </div>
+            </div>
+            <div className="dropdown">
+              <span className="nav-item">NEWS ▾</span>
+              <div className="dropdown-menu">
+                <NavLink to="/latest-news">LATEST NEWS</NavLink>
+
+                <a
+                  href="https://humanhealthproject.org/blog/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  BLOGS
+                </a>
               </div>
             </div>
           </nav>
@@ -352,13 +376,48 @@ return (
                 </div>
               )}
 
-              <NavLink
-                to="/what-we-do/shared-patient-information"
-                className="hhp-mobile-sublink"
-                onClick={closeMobile}
+              <button
+                className="hhp-mobile-acc hhp-mobile-acc--nested"
+                type="button"
+                onClick={() => toggle("spi")}
+                aria-expanded={openGroup.spi}
               >
-                SHARED PATIENT INFORMATION
-              </NavLink>
+                SHARED PATIENT INFORMATION{" "}
+                <span className="hhp-mobile-chevron">{openGroup.spi ? "–" : "+"}</span>
+              </button>
+
+              {openGroup.spi && (
+                <div className="hhp-mobile-sub hhp-mobile-sub--nested">
+                  <NavLink
+                    to="/what-we-do/shared-patient-information"
+                    className="hhp-mobile-sublink"
+                    onClick={closeMobile}
+                  >
+                    INTRODUCTION
+                  </NavLink>
+                  <NavLink
+                    to="/shared-patient-information/migraine"
+                    className="hhp-mobile-sublink"
+                    onClick={closeMobile}
+                  >
+                    MIGRAINE
+                  </NavLink>
+                  <NavLink
+                    to="/shared-patient-information/lupus"
+                    className="hhp-mobile-sublink"
+                    onClick={closeMobile}
+                  >
+                    LUPUS
+                  </NavLink>
+                  <NavLink
+                    to="/shared-patient-information/narratives"
+                    className="hhp-mobile-sublink"
+                    onClick={closeMobile}
+                  >
+                    NARRATIVES
+                  </NavLink>
+                </div>
+              )}
             </div>
           )}
 
@@ -395,6 +454,37 @@ return (
               <NavLink to="/how-to-help/matching-donations" className="hhp-mobile-sublink" onClick={closeMobile}>
                 MATCHING DONATIONS
               </NavLink>
+            </div>
+          )}
+
+          <button
+            className="hhp-mobile-acc"
+            type="button"
+            onClick={() => toggle("newSection")}
+            aria-expanded={openGroup.newSection}
+          >
+            NEWS <span className="hhp-mobile-chevron">{openGroup.newSection ? "–" : "+"}</span>
+          </button>
+
+          {openGroup.newSection && (
+            <div className="hhp-mobile-sub">
+              <NavLink
+                to="/latest-news"
+                className="hhp-mobile-sublink"
+                onClick={closeMobile}
+              >
+                LATEST NEWS
+              </NavLink>
+
+              <a
+                href="https://humanhealthproject.org/blog/"
+                className="hhp-mobile-sublink"
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={closeMobile}
+              >
+                BLOGS
+              </a>
             </div>
           )}
 
