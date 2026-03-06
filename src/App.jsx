@@ -38,6 +38,8 @@ import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsOfService from "./pages/TermsOfService";
 import ContactUs from "./pages/ContactUs";
 import JoinPatientAdvisoryBoard from "./pages/JoinPatientAdvisoryBoard";
+import SPINarratives from "./pages/SPINarratives";
+import LatestNews from "./pages/LatestNews";
 
 function App() {
   return (
@@ -136,6 +138,8 @@ function App() {
                 <Route path="/terms" element={<TermsOfService />} />
                 <Route path="/contact" element={<ContactUs />} />
                 <Route path="/join-patient-advisory-board" element={<JoinPatientAdvisoryBoard />} />
+                <Route path="/shared-patient-information/narratives" element={<SPINarratives />} />
+                <Route path="/latest-news" element={<LatestNews />} />
               </Routes>
             </main>
 
