@@ -296,6 +296,10 @@ const teamData = {
             image: 'https://humanhealthproject.org/wp-content/uploads/2024/10/Saliem-Q.S.-Alzein-300x400.webp'
         },
     ],
+    footerCta: {
+    text: "Our project is growing and we want you to be a part of it.\nMore People. More Information. Better Health.",
+    buttonText: "Join Us!"
+  }
 };
 
 // Reusable TeamMember component
@@ -355,6 +359,20 @@ export default function MeetTheTeam() {
                         Advisory Board &gt;&gt;
                     </Link>
                 </div>
+                {/* Footer CTA */}
+                <section className="about-footer-cta">
+                <p className="about-footer-cta__text">
+                    {teamData.footerCta.text.split("\n").map((line, index) => (
+                    <span key={index}>
+                        {line}
+                        {index === 0 && <br />}
+                    </span>
+                    ))}
+                </p>
+                <Link to="/signup" className="about-footer-cta__button">
+                    {teamData.footerCta.buttonText}
+                </Link>
+                </section>
             </div>
         </div>
     );
