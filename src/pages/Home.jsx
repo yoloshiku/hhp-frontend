@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export default function Home() {
   const whyCards = [
     {
@@ -81,13 +83,12 @@ export default function Home() {
               <div className="support-card-inner">
                 <iframe
                   src="https://www.gofundme.com/f/stop-type2diabetes-before-it-starts/widget/medium"
-                  title="Stop Type-2 Diabetes" scrolling="no"
+                  title="Stop Type-2 Diabetes"
+                  scrolling="no"
                 ></iframe>
               </div>
             </div>
-
           </div>
-
         </div>
       </section>
 
@@ -104,7 +105,12 @@ export default function Home() {
                 <div className="card-content">
                   <h3>{card.title}</h3>
                   <p>{card.description}</p>
-                  <a href={card.link} className="btn btn-primary btn-small">Learn More</a>
+
+                  {/* FIXED */}
+                  <Link to={card.link} className="btn btn-primary btn-small">
+                    Learn More
+                  </Link>
+
                 </div>
               </div>
             ))}
@@ -116,9 +122,7 @@ export default function Home() {
       <section className="feature-image-section">
         <div className="feature-overlay">
           <div className="container">
-            <div className="feature-content">
-              {/* This section displays a large hero image of healthcare professionals */}
-            </div>
+            <div className="feature-content"></div>
           </div>
         </div>
       </section>
@@ -150,12 +154,17 @@ export default function Home() {
         <div className="container">
           <div className="involvement-grid">
             {involvementCards.map((card) => (
-              <a key={card.id} href={card.link} className={`involvement-card ${card.className}`}>
+              <Link
+                key={card.id}
+                to={card.link}
+                className={`involvement-card ${card.className}`}
+                style={{ textDecoration: "none" }}
+              >
                 <div className="involvement-card-overlay">
                   <h3>{card.title}</h3>
                 </div>
                 <img src={card.imageUrl} alt={card.title} />
-              </a>
+              </Link>
             ))}
           </div>
         </div>
@@ -166,8 +175,12 @@ export default function Home() {
         <div className="container">
           <p className="cta-text">Empower others to change their lives and change your own in the process</p>
           <div className="cta-box">
-            <p>Our programs empower people with tools to be part of a clear path to a healthier, better lifestyle, better health.</p>
-            <a href="/signup" className="btn btn-join">Join Us</a>
+            <p>Our project is growing and we want you to be a part of it.<br></br>More People. More Information. Better Health.</p>
+            {/* FIXED */}
+            <Link to="/signup" className="btn btn-join">
+              Join Us
+            </Link>
+
           </div>
         </div>
       </section>
@@ -199,15 +212,9 @@ export default function Home() {
       </section>
 
       <style jsx>{`
-       .hero-content {
-          margin-top: 2rem;
-          display: grid;
-          grid-template-columns: 1.2fr 1fr;
-          gap: 40px;
-          align-items: stretch;
-        }
 
         .hero-content {
+          margin-top: 2rem;
           display: grid;
           grid-template-columns: 1.2fr 1fr;
           gap: 40px;
@@ -563,13 +570,13 @@ export default function Home() {
           display: inline-flex;
           align-items: center;
           gap: 20px;
-          max-width: 500px;
+          max-width: 550px;
         }
 
         .cta-box p {
           color: white;
           font-size: 13px;
-          text-align: left;
+          text-align: center;
           margin: 0;
         }
 
