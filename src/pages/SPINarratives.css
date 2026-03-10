@@ -101,7 +101,8 @@
   font-size: 30px;
   line-height: 1.25;
   font-weight: 700;
-  color: var(--spi-ink);
+  color: var(--spi-blue);
+  text-align: center;
 }
 
 .spi-link-row {

@@ -1,10 +1,42 @@
+import "./LatestNews.css";
+import { Link } from "react-router-dom";
+import pinLogo from "../assets/latest-news/pin_logo.png";
+
 export default function LatestNews() {
   return (
-    <div className="section">
-      <div className="container">
-        <h1>Latest News</h1>
-        <p>News updates will appear here.</p>
-      </div>
-    </div>
+    <main className="news-page">
+      <section className="news-section">
+        <div className="news-container">
+
+          <h1 className="news-pageTitle">LATEST NEWS</h1>
+
+          <div className="news-featureBlock">
+
+            <img
+              src={pinLogo}
+              alt="People's Impact Network"
+              className="news-partnerLogo"
+            />
+
+            <h2 className="news-featureTitle">
+              Community Voices for Prevention
+            </h2>
+
+            <p className="news-featureText">
+              New SPI initiative supported by the People’s Impact Foundation.
+            </p>
+
+            <Link
+              to="/shared-patient-information/narratives"
+              className="news-featureButton"
+            >
+              READ MORE
+            </Link>
+
+          </div>
+
+        </div>
+      </section>
+    </main>
   );
 }
