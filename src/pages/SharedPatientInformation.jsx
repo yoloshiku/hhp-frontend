@@ -271,6 +271,22 @@ export default function SharedPatientInformation() {
               </Link>
             </article>
           </div>
+          <h2 className="spi-subtitle">SPI Narratives</h2>
+          <div className="spi-narrativeBanner">
+            <div className="spi-narrativeBannerContent">
+              <p className="spi-body">
+                Explore our SPI announcement content, including Community Voices for
+                Prevention (CVP), and learn how storytelling can support preventive
+                health and community wellness.
+              </p>
+              <Link
+                to="/shared-patient-information/narratives"
+                className="spi-buttonLink"
+              >
+                VIEW SPI NARRATIVES
+              </Link>
+            </div>
+          </div>
 
           {/* WHAT OUR MEMBERS ARE SAYING */}
           <h2 className="spi-subtitle">What Our Members Are Saying</h2>
