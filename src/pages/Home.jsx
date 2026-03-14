@@ -558,13 +558,13 @@ export default function Home() {
 
         .cta-text {
           font-size: 18px;
-          color: #333;
+          color: #000000;
           margin-bottom: 25px;
           font-style: italic;
         }
 
         .cta-box {
-          background: #0066a1;
+          background: #f0f0f0;
           border-radius: 8px;
           padding: 20px 30px;
           display: inline-flex;
@@ -574,7 +574,7 @@ export default function Home() {
         }
 
         .cta-box p {
-          color: white;
+          color: #000000;
           font-size: 13px;
           text-align: center;
           margin: 0;
@@ -657,13 +657,13 @@ export default function Home() {
         }
 
         .btn-join {
-          background: #00b964;
+          background: #0066a1;
           color: white;
           white-space: nowrap;
         }
 
         .btn-join:hover {
-          background: #009952;
+          background: #004d7a
         }
 
         /* Responsive */
