@@ -1,6 +1,7 @@
 import React from "react";
 import Programs from "../components/Programs";
 import "./JoinPatientAdvisoryBoard.css";
+import heroImg from "../assets/join_advisory_board/hero_img.jpg";
 
 export default function JoinPatientAdvisoryBoard() {
   return (
@@ -9,7 +10,7 @@ export default function JoinPatientAdvisoryBoard() {
       {/* HERO */}
       <section className="jpab-hero">
         <img
-          src="/src/assets/join_advisory_board/hero_img.jpg"
+          src={heroImg}
           alt="Human Health Project Advisory Council"
           className="jpab-hero-img"
         />
