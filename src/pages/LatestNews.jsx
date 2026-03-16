@@ -23,7 +23,7 @@ export default function LatestNews() {
             </h2>
 
             <p className="news-featureText">
-              New SPI initiative supported by the People’s Impact Foundation.
+              February 23, 2026
             </p>
 
             <Link
