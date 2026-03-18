@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import { useNavigate } from "react-router-dom";
 import "./HowToHelp.css";
+import { Link } from "react-router-dom";
 export default function HowToHelp() {
   useEffect(() => {
     const hash = window.location.hash;
@@ -40,6 +41,13 @@ export default function HowToHelp() {
       location: "(Northern Ireland based)",
       image: "https://humanhealthproject.org/wp-content/uploads/2023/09/becollective_logo.webp",
       link: "https://uk.becollective.com/groups/5df81f74a9cfcf00230aa88a/opportunities",
+    },
+    {
+    name: "Human Health Project",
+    location: "(Apply Directly with HHP)",
+    image: "https://humanhealthproject.org/wp-content/uploads/2018/11/hhp-blueTM-2.png",
+    to: "/how-to-help/volunteer-with-us", // internal route
+    buttonText: "View Application",
     },
   ];
 
@@ -110,13 +118,35 @@ export default function HowToHelp() {
         <div style={styles.container}>
           <h2 style={styles.sectionTitle}>{volunteerTitle}</h2>
           <div className="howtohelp-volunteerGrid" style={styles.volunteerGrid}>
-            {volunteerPlatforms.map((platform, index) => (
+          {volunteerPlatforms.map((platform, index) => (
+            platform.to ? (
+              <Link
+                key={index}
+                to={platform.to}
+                style={styles.volunteerCard}
+                className="howtohelp-volunteerCard"
+              >
+                <img
+                  src={platform.image}
+                  alt={platform.name}
+                  style={styles.volunteerLogo}
+                />
+                <p style={styles.volunteerName}>{platform.name}</p>
+                {platform.location && (
+                  <p style={styles.volunteerLocation}>{platform.location}</p>
+                )}
+                <p className="volunteerActionPrimary" style={styles.volunteerActionPrimary}>
+                  View Application
+                </p>
+              </Link>
+            ) : (
               <a
                 key={index}
                 href={platform.link}
                 target="_blank"
                 rel="noopener noreferrer"
                 style={styles.volunteerCard}
+                className="howtohelp-volunteerCard"
               >
                 <img
                   src={platform.image}
@@ -125,8 +155,12 @@ export default function HowToHelp() {
                 />
                 <p style={styles.volunteerName}>{platform.name}</p>
                 <p style={styles.volunteerLocation}>{platform.location}</p>
+                <p className="volunteerAction" style={styles.volunteerAction}>
+                  View Listing
+                </p>
               </a>
-            ))}
+            )
+          ))}
           </div>
         </div>
       </section>
@@ -266,7 +300,7 @@ const styles = {
   },
   volunteerGrid: {
     display: 'grid',
-    gridTemplateColumns: 'repeat(3, 1fr)',
+    gridTemplateColumns: 'repeat(4, 1fr)',
     gap: '40px',
     maxWidth: '900px',
     margin: '0 auto',
@@ -275,11 +309,19 @@ const styles = {
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
+    justifyContent: 'space-between',
     padding: '20px',
+    border: '1px solid #e5e7eb',
+    borderRadius: '12px',
+    backgroundColor: '#fff',
+    textDecoration: 'none',
+    minHeight: '220px',
+    boxShadow: '0 4px 12px rgba(0,0,0,0.06)',
+    cursor: 'pointer',
   },
   volunteerLogo: {
-    width: '220px',
-    height: '100px',
+    width: '180px',
+    height: '90px',
     objectFit: 'contain',
     marginBottom: '18px',
   },
@@ -289,11 +331,25 @@ const styles = {
     color: '#333',
     marginBottom: '5px',
   },
+
   volunteerLocation: {
     fontSize: '13px',
     color: '#666',
   },
 
+  volunteerAction: {
+  marginTop: '10px',
+  fontSize: '13px',
+  fontWeight: '600',
+  color: '#065399',
+  },
+
+  volunteerActionPrimary: {
+    marginTop: '10px',
+    fontSize: '13px',
+    fontWeight: '700',
+    color: '#065399',
+  },
   // Supporters Section
   supportersSection: {
     padding: '60px 0 80px',
@@ -325,3 +381,4 @@ const styles = {
     objectFit: 'contain',
   },
 };
+

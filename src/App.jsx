@@ -40,6 +40,7 @@ import ContactUs from "./pages/ContactUs";
 import JoinPatientAdvisoryBoard from "./pages/JoinPatientAdvisoryBoard";
 import SPINarratives from "./pages/SPINarratives";
 import LatestNews from "./pages/LatestNews";
+import VolunteerWithUs from "./pages/VolunteerWithUs";
 
 function App() {
   return (
@@ -140,6 +141,7 @@ function App() {
                 <Route path="/join-patient-advisory-board" element={<JoinPatientAdvisoryBoard />} />
                 <Route path="/shared-patient-information/narratives" element={<SPINarratives />} />
                 <Route path="/latest-news" element={<LatestNews />} />
+                <Route path="/how-to-help/volunteer-with-us" element={<VolunteerWithUs />} />
               </Routes>
             </main>
 
