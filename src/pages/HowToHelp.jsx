@@ -136,7 +136,7 @@ export default function HowToHelp() {
                   <p style={styles.volunteerLocation}>{platform.location}</p>
                 )}
                 <p className="volunteerActionPrimary" style={styles.volunteerActionPrimary}>
-                  View Application
+                  View Volunteer Application
                 </p>
               </Link>
             ) : (
@@ -165,37 +165,37 @@ export default function HowToHelp() {
         </div>
       </section>
       {/* Intern Section */}
-<section style={styles.volunteerSection}>
-  <div style={styles.container}>
-    <h2 style={styles.sectionTitle}>Intern</h2>
+      <section style={styles.volunteerSection}>
+        <div style={styles.container}>
+          <h2 style={styles.sectionTitle}>Intern</h2>
 
-    <div className="howtohelp-volunteerGrid" style={styles.volunteerGrid}>
-      <Link
-        to="/how-to-help/intern"
-        style={styles.volunteerCard}
-        className="howtohelp-volunteerCard"
-      >
-        <img
-          src="https://humanhealthproject.org/wp-content/uploads/2018/11/hhp-blueTM-2.png"
-          alt="Human Health Project"
-          style={styles.volunteerLogo}
-        />
+          <div className="howtohelp-volunteerGrid" style={styles.volunteerGrid}>
+            <Link
+              to="/how-to-help/intern"
+              style={styles.volunteerCard}
+              className="howtohelp-volunteerCard"
+            >
+              <img
+                src="https://humanhealthproject.org/wp-content/uploads/2018/11/hhp-blueTM-2.png"
+                alt="Human Health Project"
+                style={styles.volunteerLogo}
+              />
 
-        <p style={styles.volunteerName}>
-          Human Health Project
-        </p>
+              <p style={styles.volunteerName}>
+                Human Health Project
+              </p>
 
-        <p style={styles.volunteerLocation}>
-          Apply directly with HHP
-        </p>
+              <p style={styles.volunteerLocation}>
+                (Apply directly with HHP)
+              </p>
 
-        <p style={styles.volunteerActionPrimary}>
-          View Application
-        </p>
-      </Link>
-    </div>
-  </div>
-</section>
+              <p className="volunteerActionPrimary" style={styles.volunteerActionPrimary}>
+                View Intern Application
+              </p>
+            </Link>
+          </div>
+        </div>
+      </section>
 
       {/* Supporters Section */}
       <section style={styles.supportersSection}>
