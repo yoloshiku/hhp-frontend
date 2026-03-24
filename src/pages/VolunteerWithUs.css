@@ -134,6 +134,49 @@
   color: #666;
 }
 
+.vwu-select {
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background: #fff;
+  outline: none;
+}
+
+.vwu-selectedRoles {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 14px;
+}
+
+.vwu-roleChip {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #f3f6fa;
+  border: 1px solid #d5deea;
+  border-radius: 20px;
+  padding: 8px 12px;
+  font-size: 14px;
+  color: #333;
+}
+
+.vwu-roleRemove {
+  border: none;
+  background: transparent;
+  color: #666;
+  cursor: pointer;
+  font-size: 16px;
+  line-height: 1;
+  padding: 0;
+}
+
+.vwu-roleRemove:hover {
+  color: #c00;
+}
+
 /* BUTTON */
 .vwu-submitButton {
   background-color: #0077cc;
