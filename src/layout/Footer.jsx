@@ -1,23 +1,22 @@
 // src/layout/Footer.jsx
-import { Link } from "react-router-dom"
-import { PieChart, Pie, Cell, ResponsiveContainer } from "recharts"
-import { FaFacebookF, FaLinkedinIn, FaInstagram } from "react-icons/fa"
-import { FaXTwitter } from "react-icons/fa6"
-import "./Footer.css"
+import { Link } from "react-router-dom";
+import { PieChart, Pie, Cell, ResponsiveContainer } from "recharts";
+import { FaFacebookF, FaLinkedinIn, FaInstagram } from "react-icons/fa";
+import { FaXTwitter } from "react-icons/fa6";
+import "./Footer.css";
 
 const fundData = [
   { name: "Programs", value: 88.2, color: "#1683ff" },
   { name: "Administration", value: 2.1, color: "#8bc34a" },
   { name: "Fundraising", value: 9.7, color: "#f4c400" },
-]
+];
 
 export default function Footer() {
-  const year = new Date().getFullYear()
+  const year = new Date().getFullYear();
 
   return (
     <footer className="hhpFooter">
       <div className="hhpFooterInner">
-
         {/* ========= COLUMN 1 : FUNDS ========= */}
         <div className="hhpFooterCol hhpFooterColCenter">
           <h3 className="hhpFooterHeading">How we use funds</h3>
@@ -34,7 +33,7 @@ export default function Footer() {
                     outerRadius={80}
                     dataKey="value"
                     paddingAngle={2}
-                    label={false}   // ✅ no values on donut
+                    label={({ percent }) => `${(percent * 100).toFixed(1)}%`}
                   >
                     {fundData.map((entry, index) => (
                       <Cell key={index} fill={entry.color} />
@@ -66,9 +65,9 @@ export default function Footer() {
           <h3 className="hhpFooterHeading">About</h3>
 
           <p className="hhpAboutText">
-            Human Health Project is a Northern Ireland (UK) registered charity, a
-            tax exempt 501(c)(3) Public Charity in the US and a Company Limited by
-            Guarantee in the Republic of Ireland.
+            Human Health Project is a Northern Ireland (UK) registered charity,
+            a tax exempt 501(c)(3) Public Charity in the US and a Company
+            Limited by Guarantee in the Republic of Ireland.
           </p>
 
           <p className="hhpAboutMeta">
@@ -151,7 +150,9 @@ export default function Footer() {
           <h3 className="hhpFooterHeading hhpQuickLinksTitle">Quick Links</h3>
 
           <div className="hhpFooterLinks">
-            <Link className="hhpFooterLink" to="/contact">Contact Us</Link>
+            <Link className="hhpFooterLink" to="/contact">
+              Contact Us
+            </Link>
             <a
               className="hhpFooterLink"
               href="https://humanhealthproject.org/blog/"
@@ -160,11 +161,21 @@ export default function Footer() {
             >
               Blogs
             </a>
-            <Link className="hhpFooterLink" to="/latest-news">Latest News</Link>
-            <Link className="hhpFooterLink" to="/terms">Terms of Service</Link>
-            <Link className="hhpFooterLink" to="/privacy">Privacy Policy</Link>
-            <Link className="hhpFooterLink" to="/medical-disclaimer">Medical Disclaimer</Link>
-            <Link className="hhpFooterLink" to="/how-to-help/intern">Intern With Us</Link>
+            <Link className="hhpFooterLink" to="/latest-news">
+              Latest News
+            </Link>
+            <Link className="hhpFooterLink" to="/terms">
+              Terms of Service
+            </Link>
+            <Link className="hhpFooterLink" to="/privacy">
+              Privacy Policy
+            </Link>
+            <Link className="hhpFooterLink" to="/medical-disclaimer">
+              Medical Disclaimer
+            </Link>
+            <Link className="hhpFooterLink" to="/how-to-help/intern">
+              Intern With Us
+            </Link>
           </div>
         </div>
       </div>
@@ -174,5 +185,5 @@ export default function Footer() {
         © {year} Human Health Project. All Rights Reserved.
       </div>
     </footer>
-  )
+  );
 }
