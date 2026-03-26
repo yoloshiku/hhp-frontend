@@ -4,8 +4,7 @@ import "./StopType2Diabetes.css";
 const GOFUNDME_URL =
   "https://www.gofundme.com/f/stop-type2diabetes-before-it-starts";
 
-const YOUTUBE_WATCH_URL =
-  "https://youtu.be/JxZLRnaZ4LI?si=sBkNMTWT5GImHqEe";
+const YOUTUBE_WATCH_URL = "https://youtu.be/JxZLRnaZ4LI?si=sBkNMTWT5GImHqEe";
 
 const YOUTUBE_EMBED_URL = "https://www.youtube-nocookie.com/embed/JxZLRnaZ4LI";
 
@@ -117,7 +116,6 @@ export default function StopType2Diabetes() {
 
             {/* RIGHT: QR DONATION */}
             <div className="container">
-
               <iframe
                 src="https://www.gofundme.com/f/stop-type2diabetes-before-it-starts/widget/large"
                 width="100%"
@@ -186,12 +184,14 @@ export default function StopType2Diabetes() {
             <article className="std2d-article">
               {/* FLAT (no box) */}
               <div className="std2d-block std2d-blockPlain">
-                <h2 className="std2d-h2">The Power of Prevention: Funding Knowledge</h2>
+                <h2 className="std2d-h2">
+                  The Power of Prevention: Funding Knowledge
+                </h2>
                 <p>
                   We believe in prevention, not just treatment. Your support
                   doesn’t just treat a problem it helps stop it at the root.
-                  Informed people make better choices and better choices
-                  prevent disease.
+                  Informed people make better choices and better choices prevent
+                  disease.
                 </p>
                 <p>
                   We don’t believe in waiting for a crisis. We believe in
@@ -210,7 +210,9 @@ export default function StopType2Diabetes() {
 
               {/* FLAT (no box) */}
               <div className="std2d-block std2d-blockPlain">
-                <h2 className="std2d-h2">Invest in Health Literacy, Save a Life</h2>
+                <h2 className="std2d-h2">
+                  Invest in Health Literacy, Save a Life
+                </h2>
                 <p>
                   By funding the completion of our final 12 videos, you are
                   helping us deliver the single most effective intervention
@@ -224,7 +226,9 @@ export default function StopType2Diabetes() {
 
               {/* KEEP BOX (goal + table) */}
               <div className="std2d-block">
-                <h2 className="std2d-h2">Empowering Communities to Prevent Type 2</h2>
+                <h2 className="std2d-h2">
+                  Empowering Communities to Prevent Type 2
+                </h2>
 
                 <div className="std2d-goalBox">
                   <div>
@@ -336,7 +340,9 @@ export default function StopType2Diabetes() {
 
               {/* FLAT (no box) */}
               <div className="std2d-block std2d-blockPlain">
-                <h2 className="std2d-h2">Your Donation Builds a Life-Saving Program</h2>
+                <h2 className="std2d-h2">
+                  Your Donation Builds a Life-Saving Program
+                </h2>
                 <p>
                   Your investment directly creates the complete “Stop Type 2
                   Diabetes Before It Starts” program - a comprehensive,
@@ -376,7 +382,9 @@ export default function StopType2Diabetes() {
 
               {/* FLAT (no box) */}
               <div className="std2d-block std2d-blockPlain">
-                <h2 className="std2d-h2">The Knowledge You Fund Will Be Used To</h2>
+                <h2 className="std2d-h2">
+                  The Knowledge You Fund Will Be Used To
+                </h2>
                 <p>
                   This program provides participants with practical, actionable
                   steps to immediately stabilize their blood sugar and prevent
@@ -411,23 +419,10 @@ export default function StopType2Diabetes() {
                       Start your day right: the best breakfasts for balanced
                       blood sugar
                     </li>
-                    <li>The best time to eat dessert, and which ones are healthier</li>
+                    <li>
+                      The best time to eat dessert, and which ones are healthier
+                    </li>
                   </ul>
-                </div>
-
-                <div className="std2d-finalCall">
-                  <p className="std2d-finalText">
-                    You’re not just donating. You’re changing lives. Let’s stop
-                    Type 2 diabetes before it starts together.
-                  </p>
-                  <a
-                    className="std2d-button"
-                    href={GOFUNDME_URL}
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    Donate via GoFundMe
-                  </a>
                 </div>
               </div>
             </article>
