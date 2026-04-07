@@ -33,7 +33,9 @@ export default function Footer() {
                     outerRadius={80}
                     dataKey="value"
                     paddingAngle={2}
+                    labelLine={false}
                     label={({ percent }) => `${(percent * 100).toFixed(1)}%`}
+                    isAnimationActive={false}
                   >
                     {fundData.map((entry, index) => (
                       <Cell key={index} fill={entry.color} />

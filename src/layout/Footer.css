@@ -51,23 +51,21 @@
 }
 
 .hhpDonutBox {
-  width: 260px;
-  height: 220px;
-  overflow: visible; /* prevents clipping */
+  width: 280px;
+  height: 240px;
+  overflow: visible;
+}
+
+.hhpDonutPct {
+  font-size: 12px;
+  font-weight: 600;
+  fill: #000;
 }
 
 .hhpDonutSvg {
   width: 100%;
   height: 100%;
   display: block;
-}
-
-/* % labels on donut */
-.hhpDonutPct {
-  font-size: 10px;
-  font-weight: 400;
-  fill: #fff;
-  opacity: 0.95;
 }
 
 /* Legend */
@@ -263,7 +261,7 @@
   }
 
   .hhpDonutBox {
-    width: 260px;
+    width: 280px;
     height: 220px;
   }
 }
