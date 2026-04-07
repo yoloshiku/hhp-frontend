@@ -1,7 +1,7 @@
 :root {
-  --pani-blue: #065399;
+  --pani-white: #ffffff;
   --pani-ink: #0b1220;
-  --pani-border: rgba(0, 0, 0, 0.10);
+  --pani-border: rgba(0, 0, 0, 0.1);
   --pani-shadow: 0 12px 34px rgba(0, 0, 0, 0.08);
 }
 
@@ -46,21 +46,24 @@
 
 .pani-heroOverlay {
   position: absolute;
-  inset: 0;
-  background:
-    linear-gradient(180deg, rgba(255,255,255,0.10), rgba(255,255,255,0.55) 45%, rgba(255,255,255,0.92)),
-    radial-gradient(900px 360px at 20% 25%, rgba(6, 83, 153, 0.18), transparent 60%);
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.2);
+  z-index: 1;
 }
-
 .pani-heroInner {
   position: relative;
-  z-index: 1;
+  z-index: 2;
+  color: white;
+  text-align: center;
 }
 
 .pani-eyebrow {
   margin: 0 0 10px;
   font-size: 13px;
-  letter-spacing: 0.10em;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
   color: rgba(0, 0, 0, 0.58);
 }
@@ -70,17 +73,17 @@
   font-size: clamp(32px, 4vw, 48px);
   line-height: 1.15;
   letter-spacing: -0.02em;
-  color: var(--pani-blue);
+  color: var(--pani-white);
   text-align: center;
 }
 
 .pani-subtitle {
   margin: 10px 0 0;
-  font-size: 18px;
+  font-size: 30px;
   line-height: 1.6;
   font-weight: 800;
   letter-spacing: -0.01em;
-  color: rgba(0, 0, 0, 0.78);
+  color: var(--pani-white);
   text-align: center;
 }
 
@@ -109,7 +112,7 @@
 /* Body helpers */
 .pani-body {
   margin: 5px 0 14px;
-  text-align: left;   
+  text-align: left;
 }
 
 .pani-noteStrong {
@@ -133,7 +136,7 @@
 /* Bullets */
 .pani-listBox {
   border-radius: 14px;
-  border: 1px solid rgba(0, 0, 0, 0.10);
+  border: 1px solid rgba(0, 0, 0, 0.1);
   background: rgba(0, 0, 0, 0.02);
   padding: 12px 12px;
   margin-top: 12px;
@@ -149,7 +152,7 @@
   line-height: 1.65;
 }
 .pani-bullets li::marker {
-  color: var(--pani-blue);
+  color: var(--pani-white);
   font-size: 1.1em;
 }
 
@@ -171,7 +174,7 @@
   padding: 12px 14px;
   border: none;
   border-radius: 5px;
-  background: var(--pani-blue);
+  background: var(--pani-white);
   color: #ffffff;
   cursor: pointer;
   font-weight: 800;
@@ -208,11 +211,11 @@
 
 .pani-upcomingBox {
   display: flex;
-  align-items: center;        /* vertical center */
-  justify-content: center;    /* horizontal center */
+  align-items: center; /* vertical center */
+  justify-content: center; /* horizontal center */
   text-align: center;
 
-  min-height: 50px;          /* adjust if needed */
+  min-height: 50px; /* adjust if needed */
   padding: 20px;
 
   border: 1px solid rgba(0, 0, 0, 0.1);
@@ -222,7 +225,7 @@
 
 .pani-upcomingBox p {
   margin: 0;
-  font-size: 16px;            /* matches your body text standard */
+  font-size: 16px; /* matches your body text standard */
   line-height: 1.6;
 }
 
@@ -250,7 +253,6 @@
   margin-top: 12px;
 }
 
-
 .pani-quoteCard {
   background: #ffffff;
   border: 1px solid rgba(0, 0, 0, 0.08);
@@ -258,7 +260,7 @@
   box-shadow: 0 10px 26px rgba(0, 0, 0, 0.05);
   padding: 18px 18px 16px;
 
-  display: flex;                 /* FIX: equal height + author pinned bottom */
+  display: flex; /* FIX: equal height + author pinned bottom */
   flex-direction: column;
   justify-content: space-between;
   min-height: 150px;
@@ -279,45 +281,45 @@
   color: rgba(0, 0, 0, 0.85);
 }
 /* PROGRAM GRID (image + text pairs) */
-.pani-programSection{
-  margin-top:32px;
+.pani-programSection {
+  margin-top: 32px;
 }
 
-.pani-programGrid{
-  display:grid;
-  grid-template-columns:1fr;
-  gap:22px;
-  margin-top:10px;
+.pani-programGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 22px;
+  margin-top: 10px;
 }
 
-.pani-programItem{
-  display:grid;
-  grid-template-columns:1fr;
-  gap:14px;
+.pani-programItem {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 14px;
   align-items: flex-start;
 }
 
-.pani-programImgWrap{
-  border-radius:14px;
-  overflow:hidden;
-  border:1px solid rgba(0,0,0,.10);
-  background:#fff;
+.pani-programImgWrap {
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  background: #fff;
   text-align: left;
   margin-top: 19px;
 }
 
-.pani-programImg{
-  width:100%;
-  height: 250px; 
-  display:block;
-  object-fit:cover;
+.pani-programImg {
+  width: 100%;
+  height: 250px;
+  display: block;
+  object-fit: cover;
 }
 
-.pani-programContent{
-  padding-top:2px;
+.pani-programContent {
+  padding-top: 2px;
 }
 .pani-programContent .pani-body {
-  font-size: 15px;        
+  font-size: 15px;
   line-height: 1.65;
   margin: 0;
 }
@@ -326,66 +328,65 @@
 .pani-programContent * {
   text-align: left;
 }
-.pani-programTitle{
+.pani-programTitle {
   font-size: 16px;
   font-weight: 900;
   margin-bottom: 4px;
 }
 
-.pani-titleLink{
-  color:var(--pani-blue);
-  font-weight:900;
-  text-decoration:none;
+.pani-titleLink {
+  color: var(--pani-white);
+  font-weight: 900;
+  text-decoration: none;
 }
 
-.pani-titleLink:hover{
-  text-decoration:underline;
+.pani-titleLink:hover {
+  text-decoration: underline;
 }
 
-.pani-inlineLink{
-  color:var(--pani-blue);
-  font-weight:800;
-  text-decoration:none;
+.pani-inlineLink {
+  color: var(--pani-white);
+  font-weight: 800;
+  text-decoration: none;
 }
 
-.pani-inlineLink:hover{
-  text-decoration:underline;
+.pani-inlineLink:hover {
+  text-decoration: underline;
 }
 
-@media (min-width: 920px){
+@media (min-width: 920px) {
   /* testimonials stay equal */
-  .pani-testimonialsGrid{
+  .pani-testimonialsGrid {
     grid-template-columns: 1fr 1fr;
     gap: 22px;
     align-items: stretch;
   }
 
   /* program blocks */
-  .pani-programGrid{
+  .pani-programGrid {
     grid-template-columns: 1fr 1fr;
     gap: 34px 34px;
   }
 
-  .pani-programItem{
-    grid-template-columns: 220px 1fr;  /* image longer */
+  .pani-programItem {
+    grid-template-columns: 220px 1fr; /* image longer */
     gap: 18px;
     align-items: start;
   }
 
-  .pani-programImg{
-    height: 140px;   /* bigger image */
+  .pani-programImg {
+    height: 140px; /* bigger image */
     object-fit: cover;
   }
 }
 
-
-@media (max-width: 560px){
-  .pani-hero{
-    margin:14px 12px 0;
-    border-radius:14px;
+@media (max-width: 560px) {
+  .pani-hero {
+    margin: 14px 12px 0;
+    border-radius: 14px;
   }
 
-  .pani-card{
-    padding:16px;
+  .pani-card {
+    padding: 16px;
   }
 }
