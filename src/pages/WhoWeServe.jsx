@@ -2,9 +2,9 @@ import React from 'react';
 import H from '../components/common/H.jsx';
 import Carousel from '../components/common/Carousel.jsx';
 import ImageTextSection from '../components/common/ImageTextSection.jsx';
-
+import { useNavigate } from 'react-router-dom';
 const WhoWeServe = () => {
-
+    const navigate = useNavigate();
     const countriesServed = [
         { name: 'United States', image: 'https://flagcdn.com/w320/us.png' },
         { name: 'Canada', image: 'https://flagcdn.com/w320/ca.png' },
@@ -128,7 +128,7 @@ const WhoWeServe = () => {
                             80 people. Your financial gift will help people across the globe.
                             </p>
                             <button className="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-8 py-3 rounded transition-colors duration-200 shadow-md hover:shadow-lg"
-                            onClick={()=> window.location.href = '/donate'}>
+                            onClick={()=> navigate('/donate')}>
                             GIVE NOW
                             </button>
                         </div>
@@ -154,7 +154,7 @@ const WhoWeServe = () => {
                             </p>
                         </div>
                         <button className="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-10 py-3 rounded transition-colors duration-200 shadow-md hover:shadow-lg whitespace-nowrap" 
-                            onClick={()=> window.location.href = '/signup'}>
+                            onClick={()=> navigate('/signup')}>
                             JOIN US!
                         </button>
                         </div>
