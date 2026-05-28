@@ -26,25 +26,11 @@ const teamData = {
             image: 'https://humanhealthproject.org/wp-content/uploads/2023/09/Jonh-Kotick.webp'
         },
         {
-            name: 'Jonathan Hool',
-            details: 'Jonathan is a Graduate of Queen’s University. He has been a Solicitor since 1980. He is a member of The Society of Trust and Estate Practitioners and of the Belfast Solicitors Association. In 2015, he was appointed a Specialist Arbitrator by Sports Resolutions UK. He lectures regularly on conveyancing; also on trusts. In the voluntary section, he has served on Committee at MCC (Marylebone Cricket Club) both on Players and Fixtures (1998-2006) and most recently (2012-2015) Membership and General Purposes. He has also served on the Commercial Committee of Cricket Ireland (2011-2015). He is Honorary Solicitor to the Belfast Jewish Community. He is a former partner (1994-2015) and senior partner (2013-2015) at Harrisons Solicitors. In July 2015, he founded Hool Law Limited with Victoria McLean, Iain McGonigle and Anthony Murphy and the bulk of the Harrisons staff. ',
-            location: 'NI',
-            title: 'Director, NI',
-            image: 'https://humanhealthproject.org/wp-content/uploads/2023/09/Jonathan-Hool-300x400.webp'
-        },
-        {
             name: 'Denny Elliot',
             details: 'Denny has been working in the Voluntary and Community Sector for 30 years at both director and senior management level. A former Peace and Conflict Studies student at Magee Campus University at Ulster he also studied Advertising, Marketing, and Public Relations at Queens and strategic Management at Boston College. He began life in the sector with Amnesty International before Joining Concern Worldwide and then moving on to become a Regional Manager with Save the Children Fund and then Director of Oxfam Ireland. Denny was also Director of Fundraising and Communications with Northern Ireland Chest Heart and Stroke Association for 8 years creating and developing new and innovative income streams from the organization such as legacies, donations in lieu of flowers and community event. Denny Established Redsocks Consulting in 2005 specializing in Strategic Management and Capital and Income Generation. Redsocks have worked on some of the biggest capital and revenue projects in the voluntary sector such as the MAC Arts Centre Belfast, Somerton Road Adult Hospice Belfast and Horizon West Children’s Hospice in Fermanagh. During this period Denny successfully established a ‘Friends’ of Northern Ireland group in both the House of Lords and New York and developed partnerships with some of the biggest Trusts and Foudnations in the UK. Redsocks have generated over £15 million in the last 10 years for client organizations and over the last 18 months have expanded into the international arena, breaking new ground in philanthropy and development which has involved working in the USA developing client partnerships with various universities, museums, hospitals, libraries, individuals, and businesses to establish opportunities which enable access to global giving foundations, such as Atlantic Philanthropies, The Clinton Foundation, The Oak Foundation and the Bloomberg Foundation. Denny is now Head of Self Help Africa NOrthern Ireland with responsibility for the delivery of Irish Aid Funded Programmes in Teso Uganda. Denny has been a Steering Group Committee Member of Changemakers since 2019. Denny is a Trustee of the Human Health Project. ',
             location: 'NI',
             title: 'Director, NI',
             image: 'https://humanhealthproject.org/wp-content/uploads/2023/09/Denny-Elliot.webp'
-        },
-        {
-            name: 'Alyssa O\'Driscoll',
-            details: 'Alyssa O\'Driscoll brings over 20 years of experience in the nonprofit sector to her role as a Board Director at Human Health Project. With a deep commitment to advancing public health initiatives, Alyssa has worked with a variety of organizations, focusing on program development, strategic planning, and community engagement. Throughout her career, Alyssa has successfully led numerous initiatives aimed at improving health outcomes. Her expertise in fundraising and stakeholder collaboration has been instrumental in driving impactful projects and fostering sustainable partnerships. Alyssa holds her Bachelor of Science in Communication from the University of Kentucky, Master of Public Administration and Master of Business Administration from DeVry University\'s Keller Graduate School of Management, and most recently her graduate certificate in Nonprofit Management from Harvard University, Division of Continuing Education. She also holds her Certified Fund Raising Executive credential. Alyssa is passionate about leveraging data-driven strategies to enhance the effectiveness of nonprofit programs. She is dedicated to promoting health equity and ensuring that all communities have access to essential health resources.',
-            location: 'US',
-            title: 'Director, US',
-            image: 'https://humanhealthproject.org/wp-content/uploads/2024/10/Alyssa-ODriscoll-300x400.webp'
         },
     ],
     management: [
@@ -68,13 +54,6 @@ const teamData = {
             location: '',
             title: 'General Manager - Diabetes Project',
             image: 'https://humanhealthproject.org/wp-content/uploads/2024/11/Aya-Ali-300x400.jpeg'
-        },
-        {
-            name: 'Kaitlin Walker',
-            details: 'Kaitlin is a healthcare leader with expertise spanning clinical practice, operations, and strategic program development. She holds both a Master of Public Health and a Master of Business Administration, equipping her with the skills to bridge frontline patient care with high-level organizational strategy. Kaitlin is also a certified Project Management Professional and Certified Scrum Master, with experience leading initiatives in healthcare operations, insurance, workflow optimization, and cross-functional project delivery. Her professional background includes designing and implementing process improvements that enhance service delivery, streamline administrative systems, and support better patient outcomes. Passionate about health equity and community impact, Kaitlin brings a results-driven approach to her work while fostering collaboration among diverse stakeholders. She currently serves as the Director of the Healthcare Access for All Program with the Human Health Project, where she is committed to advancing the organization\'s mission of expanding access to quality health information for underserved communities.',
-            location: '',
-            title: 'Director, Healthcare Access for All Programs',
-            image: 'https://humanhealthproject.org/wp-content/uploads/2025/10/Kaitlin-Walker-300x400.webp'
         },
     ],
     technology: [
@@ -100,20 +79,6 @@ const teamData = {
             image: 'https://humanhealthproject.org/wp-content/uploads/2024/05/Rene-Herrera-300x400.webp'
         },
         {
-            name: 'Jon Leibowitz',
-            details: 'Jon Leibowitz lives in Los Angeles, California. He is a student at Pasadena City College studying cybersecurity. ',
-            location: '',
-            title: 'Infrastructure Specialist',
-            image: 'https://humanhealthproject.org/wp-content/uploads/2023/09/Jon-Leibowitz-300x303.webp'
-        },
-        {
-            name: 'Antonio Gouveia',
-            details: 'A biomedical engineering background, Antonio has worked within the Biotechnology sector in Research, Sales and, ultimately, in Business Analytics. The expertise gathered in these different areas allows him to understand and use data to obtain meaningful insights and recommend high-quality actions towards innovation of technologies aimed at health improvement. ',
-            location: '',
-            title: 'Database Administrator',
-            image: 'https://humanhealthproject.org/wp-content/uploads/2023/09/Antonio-Gouveia-300x400.webp'
-        },
-        {
             name: 'Sukanya Devarajan',
             details: 'Sukanya Devarajan is a Quality Assurance professional with a work background in Life Insurance, Finance, and E-commerce applications. A graduate in Electrical and Electronics, with experience in various types of software testing, is looking forward to improving her automation skills, learning API testing, DevOps testing, and its application in the real world. Her passion in testing and identifying critical issues, has led to volunteering for non-profit organizations. ',
             location: '',
@@ -129,13 +94,6 @@ const teamData = {
         },
     ],
     product: [
-        {
-            name: 'Hansel Noriega',
-            details: 'Designer with over 10+ years of experience based in Greater Los Angeles, California, Hansel specializes in branding, advertising, and marketing. His proficiency in digital design has allowed him to acquire a comprehensive understanding of common user experience issues, enhance web interfaces, improve online performance metrics, and create top-quality UX design solutions across various digital platforms. ',
-            location: '',
-            title: 'Lead UX Designer',
-            image: 'https://humanhealthproject.org/wp-content/uploads/2023/09/Hansel-Noriega-320x320.webp'
-        },
     ],
     privacySecurity: [
         {
@@ -208,13 +166,6 @@ const teamData = {
             image: 'https://humanhealthproject.org/wp-content/uploads/2023/09/Ginger-Crawford.webp'
         },
         {
-            name: 'Erica Andrews',
-            details: 'Erica Andrews current areas of interest are in the fields of Computer Science and Psychology. She\'s practiced these fields in her undergraduate education and for the past two and a half years. She is interested in combining both fields of her interest toward a position that allows her to practice and apply what she has learned. She has been a student for practically her whole life and drawn toward education and things related for as long as she can remember. She has explored many fields on its surface in order to discover whether the first educational field introduced would only capture her interest. However, being involved in a field related to mental health will allow her to apply what she has personally learned from her past, her experiences, and the past and experiences of others. This idea has drawn her toward assisting an organization in the field of health as much as she can in order to gain referrals and experience networking. Although her interests have guided her toward assisting many organizations in various fields, she assumes it will be an honor to contribute toward the field that initially captured her interest. She started practicing with computer programming languages about two and a half years ago by reading and writing code. After programming for a while, she began to take an interest in Web Development and Web Design. She began to create websites and eventually found her first internship as a Web Developer. She completed her first internship and eventually found another as a Web Designer. While interning, she practiced reading and writing programs and becoming better at understanding the various tools that can be applied toward creating a website. She learned a lot and is happy to know that she will always have more to learn in the technical field. She eventually discovered positions that have captured her current interest in order to apply both of her majors, Computer Science and Psychology. She hopes to explore these positions in the future as she continues to practice. She is not sure whether she will ever get the chance to benefit the health field by discovering or creating something unique. If so, she imagines it would be a wonderful experience. She has gone from studying the mental health field since a child, to exploring different types of fields out of curiosity, to diving into the technical field to see whether she may find assistance toward mastering her first field of interest. She has presently applied both fields to her activities and practices and hopes for the future to continue to learn.',
-            location: '',
-            title: 'HR Assistant',
-            image: 'https://humanhealthproject.org/wp-content/uploads/2023/09/Erica-Andrews-300x400.webp'
-        },
-        {
             name: 'Sherie Ford',
             details: 'Sherie is a qualified health professional, and has spent a large portion of her working life helping people improve their health outcomes. She is passionate about enabling her patients, and other people, to live long and healthy lives through empowered decision making. HR became an interest of Sherie\'s over the past few years when she experienced portions of corporate life that she knew she could improve for others following her, given the chance. Much like improvements in healthcare, Sherie believes that positive change comes from a strong desire to improve, and the grit to see a difficult plan through.',
             location: '',
@@ -259,13 +210,6 @@ const teamData = {
             location: '',
             title: 'Education and Online Learning Specialist',
             image: 'https://humanhealthproject.org/wp-content/uploads/2023/09/Pritha-Sur-300x400.webp'
-        },
-        {
-            name: 'Doug Matthews',
-            details: 'Doug is an experienced marketing professional with a broad range of corporate and agency experience planning and executing campaigns resulting in sales and/or membership growth. His expertise includes developing and executing effective advertising plans, including on and offline media strategy and placement, creative development, and ongoing reporting and optimization. He has held marketing management roles for several major U.S. brands, from Hospitality to Healthcare. His most recent experience has been developing and executing demand generation plans for large managed care organizations, with the goal of expanding health coverage to individuals and families, particularly among underserved communities. He also has extensive online event marketing experience.',
-            location: '',
-            title: 'Education and Online Learning Specialist',
-            image: 'https://humanhealthproject.org/wp-content/uploads/2024/02/Doug-Mathews-300x360.webp'
         },
         {
             name: 'Ana Olivares',
