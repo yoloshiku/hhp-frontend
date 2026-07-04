@@ -1,0 +1,6 @@
+{
+  "globalHeaders": {
+    "Access-Control-Allow-Origin": "https://your-backend.azurewebsites.net",
+    "Access-Control-Allow-Methods": "GET, POST, OPTIONS"
+  }
+}
